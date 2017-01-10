@@ -130,10 +130,10 @@ Both CSS and JS files can be separate to maintain a framework's structure. Howev
 
 ```
 modules/  .........................................................  Modules
-↳core/  ....................................  Shared styles between modules
+↳ core/  ....................................  Shared styles between modules
 pages/  ..............................................  Specific page styles
 vendors/  ............................................  Third-party software
-↳overwrites/  .................................................  Overwrites
+↳ overwrites/  .................................................  Overwrites
 ```
 
 
