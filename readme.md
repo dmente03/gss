@@ -86,6 +86,7 @@ In which `button` is the module; `is-primary`, `is-large`,  `is-submitting` are 
 Some modules are more important than others and may cascade throughout the stylesheet. These notorious blocks are the most basic building units, and some of its parts — like variables and mixins — may spread to other modules. E.g.: colors, typographic scale, common attributes, grid measures, etc.
 
 _(ordered by importance)_
+
 Core modules | Description
 ------------ | ---------------
 `core`/`utils.scss` | Functions and uncategorized mixins
