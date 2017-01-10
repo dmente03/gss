@@ -29,8 +29,10 @@ An attribute is a part and/or an extension of the parent module (or a module of 
 
 #### Example
 ```html
-<!--    A module ↴    Its attributes ↴    And its dependence ↴   -->
-<button class="button is-primary is-big is-lead has-icon">…</button>
+<!--    A module ↴    Its attributes ↴     Its dependence ↴  -->
+<button class="button is-primary is-big is-submitting has-icon">
+  …
+</button>
 ```
 In which `button` is the module; `is-primary`, `is-large`,  `is-submitting` are its attributes; and `has-icon` is its dependence from another module.
 
