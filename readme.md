@@ -91,10 +91,9 @@ Core modules | Description
 `core`/`utils.scss` | Functions and uncategorized mixins
 `core`/`colors.scss` | Colors, sorted by name and semantic purpose (e.g.: `blue` and `primary`)
 `core`/`type.scss` | Typographic modular scale and text elements (`h1`,  `p`, etc)
+`core`/`attributes.scss` | Shared attributes between different modules
 `core`/`grid`/`grid.scss` | Dimensions, rows, containers, alignments and responsive rules
 `core`/`grid`/`columns.scss` | Columns, offsetting, nesting, ordering and more responsive rules
-`core`/`motion.scss` | Keyframes, triggers and special mixins for UI animation
-`core`/`attributes.scss` | Shared attributes between different modules
 
 ### Regular modules
 The naming scheme of classes and files are: if it's a file, then is plural; if it's the module class name, then is singular.
@@ -114,6 +113,7 @@ Examples of modules | Description
 `inputs.scss` | Inputs and its variations
 `logos.scss` | Logos and its variations
 `menus.scss` | Menu layouts
+`motion.scss` | Keyframes, triggers and special mixins for UI animation
 `overlays.scss` | Modals, popovers and other things that overlays basic UI
 `sections.scss` | Special sections layouts
 `tables`/`tables.scss` | Tables header, body and footer layouts

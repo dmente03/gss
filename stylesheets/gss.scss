@@ -11,10 +11,9 @@
 @import "modules/core/utils";
 @import "modules/core/colors";
 @import "modules/core/type";
+@import "modules/core/attributes";
 @import "modules/core/grid/grid";
 @import "modules/core/grid/columns";
-@import "modules/core/attributes";
-@import "modules/core/motion";
 
 // Modules ...................... User interface modules //
 @import "modules/articles";
@@ -29,6 +28,7 @@
 @import "modules/icons";
 @import "modules/inputs";
 @import "modules/menus";
+@import "modules/motion";
 @import "modules/overlays";
 @import "modules/sections";
 @import "modules/tables/tables";
