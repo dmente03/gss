@@ -1,5 +1,4 @@
 ![Logo of Guava Stylesheet Standards](https://dl.dropboxusercontent.com/u/13659411/Guava/gss.svg)
-
 GSS is a module-based approach to CSS structuration with a human-friendly syntax. The main idea is to divide the user interface into (almost) independent modules, which in turn contain attributes that can be combined to compose variations of their parent module. All of that alongside a more natural readability of the classes. This way, it’s easy to understand, develop and maintain stylesheets, from small to big projects.
 
 ## Features
