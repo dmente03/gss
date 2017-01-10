@@ -1,0 +1,41 @@
+///////////////////////////////////////////////////////////
+// GSS                                                   //
+///////////////////////////////////////////////////////////
+
+@charset "utf-8";
+
+// Vendors ....................... Thirdy-party software //
+// @import "vendors/…";
+
+// Core modules .......... Shared styles between modules //
+@import "modules/core/utils";
+@import "modules/core/colors";
+@import "modules/core/type";
+@import "modules/core/grid/grid";
+@import "modules/core/grid/columns";
+@import "modules/core/attributes";
+@import "modules/core/motion";
+
+// Modules ...................... User interface modules //
+@import "modules/articles";
+@import "modules/alerts";
+@import "modules/backgrounds";
+@import "modules/buttons";
+@import "modules/figures";
+@import "modules/footers";
+@import "modules/forms";
+@import "modules/groups";
+@import "modules/headers";
+@import "modules/icons";
+@import "modules/inputs";
+@import "modules/menus";
+@import "modules/overlays";
+@import "modules/sections";
+@import "modules/tables/tables";
+@import "modules/tables/cells";
+
+// Pages ......................... Specific page styling //
+@import "pages/page-name";
+
+// Vendor Overwrites ............ Third-party overwrites //
+@import "vendors/overwrites/vendor-name";
