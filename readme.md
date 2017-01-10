@@ -23,14 +23,14 @@ GSS is a module-based approach to CSS structuration with a human-friendly syntax
 
 Essentially, every user interface part is a module, and ideally, they should be the most independent and self-contained from other modules as possible.
 
-A module can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid for example). They are named by its *purpose*. E.g.: `button`, or `grid`.
+A module can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid for example). They are named by its _purpose_. E.g.: `button`, or `grid`.
 
-An attribute is a part and/or an extension of the parent module (or a module of a module) — and can only exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its *purpose*, *appearance*, *behavior* or *dependence*. E.g.: `is-primary`, `is-large`,  `is-submitting` or `has-icon`.
+An attribute is a part and/or an extension of the parent module (or a module of a module) — and can only exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its _purpose_, _appearance_, _behavior_ or _dependence_. E.g.: `is-primary`, `is-large`,  `is-submitting` or `has-icon`.
 
 #### Example
 ```html
-<!--    A module ↴    Its attributes ↴     Its dependence ↴  -->
-<button class="button is-primary is-big is-submitting has-icon">
+<!--    A module ↴     Its attributes ↴     Its dependence ↴  -->
+<button class="button is-primary is-large is-submitting has-icon">
   …
 </button>
 ```
@@ -85,39 +85,40 @@ In which `button` is the module; `is-primary`, `is-large`,  `is-submitting` are 
 ### Core modules
 Some modules are more important than others and may cascade throughout the stylesheet. These notorious blocks are the most basic building units, and some of its parts — like variables and mixins — may spread to other modules. E.g.: colors, typographic scale, grid measures, motion callouts etc.
 
+_(ordered by importance)_
 Core modules | Description
 ------------ | ---------------
-`core` / `utils` | Functions, helper classes and uncategorized mixins
-`core` / `colors` | Colors, sorted by name and semantic purpose (e.g.: `blue` and `primary`)
-`core` / `type` | Typographic modular scale and text elements (`h1`,  `p`, etc) 
-`core` / `grid` / `grid` | Dimensions, rows, containers, alignments and responsive rules
-`core` / `grid` / `columns` | Columns, offsetting, nesting, ordering and more responsive rules
-`core` / `motion` | Keyframes, triggers and special mixins for UI animation
-_(ordered by importance)_
+`core`/`utils.scss` | Functions and uncategorized mixins
+`core`/`colors.scss` | Colors, sorted by name and semantic purpose (e.g.: `blue` and `primary`)
+`core`/`type.scss` | Typographic modular scale and text elements (`h1`,  `p`, etc)
+`core`/`grid`/`grid.scss` | Dimensions, rows, containers, alignments and responsive rules
+`core`/`grid`/`columns.scss` | Columns, offsetting, nesting, ordering and more responsive rules
+`core`/`motion.scss` | Keyframes, triggers and special mixins for UI animation
+`core`/`attributes.scss` | Shared attributes between different modules
 
-### Other modules
+### Regular modules
+The naming scheme of classes and files are: if it's a file, then is plural; if it's the module class name, then is singular.
+
 Examples of modules | Description
 ------------------- | ---------------
-`articles` | Articles layouts
-`alerts` | Alerts and notifications
-`backgrounds` | Textures, patterns and other things
-`buttons` | Buttons and its variations
-`figures` | Images, illustrations, infographics
-`footers` | Footers layouts
-`forms` | Inputs & fieldsets layouts
-`headers` | Headers layouts
-`groups` | Groups of standalone elements, like button, inputs, figures, icons, etc
-`icons` | Iconography
-`inputs` | Inputs and its variations
-`logos` | Logos and its variations
-`menus` | Menu layouts
-`overlays` | Modals, popovers and other things that overlays basic UI
-`sections` | Special sections layouts
-`tables` / `tables` | Tables header, body and footer layouts
-`tables` / `cells` | Table cells, rows and columns
+`articles.scss` | Articles layouts
+`alerts.scss` | Alerts and notifications
+`backgrounds.scss` | Textures, patterns and other things
+`buttons.scss` | Buttons and its variations
+`figures.scss` | Images, illustrations, infographics
+`footers.scss` | Footers layouts
+`forms.scss` | Inputs & fieldsets layouts
+`groups.scss` | Groups of standalone elements, like button, inputs, figures, icons, etc
+`headers.scss` | Headers layouts
+`icons.scss` | Iconography
+`inputs.scss` | Inputs and its variations
+`logos.scss` | Logos and its variations
+`menus.scss` | Menu layouts
+`overlays.scss` | Modals, popovers and other things that overlays basic UI
+`sections.scss` | Special sections layouts
+`tables`/`tables.scss` | Tables header, body and footer layouts
+`tables`/`cells.scss` | Table cells, rows and columns
 `…` | …
-
-_PS: The naming scheme of classes and files are: if it's a file, then is plural; if it's the module class name, then is singular._
 
 ### Specific page styles
 Sometimes, it's hard to map some user interface components (or aspects) to modules. Also, there may be specific styles that make more sense belonging to a page rather than a building block. For that, there is the `pages/`  folder. These styles classes are prefixed with `page-`.
@@ -126,17 +127,17 @@ Sometimes, it's hard to map some user interface components (or aspects) to modul
 The open source world is vast and vibrant. In order to deal with these huge amount of awesomeness, it's prudent to specify what you relies on and overwrites over. GSS does this by separating the overwrites into its own folder and files. These style classes are prefixed with `vendor-`.
 
 
-## File structure of the front-end (CSS + JS)
+## Front-end file structure (CSS + JS)
 
-Both CSS and JS files can be separate to maintain a framework's structure. However, it would be nice to replicate their very same structure on its specific folders.
+Both CSS and JS files can be separate to maintain a framework's structure (e.g.: CSS inside `stylesheets/` and JS in `javascripts/`). However, it would be nice to replicate their very same structure on its specific folders.
 
-```
-modules/  .........................................................  Modules
-↳ core/  ....................................  Shared styles between modules
-pages/  ..............................................  Specific page styles
-vendors/  ............................................  Third-party software
-↳ overwrites/  .................................................  Overwrites
-```
+Folder | Description
+------ | -----------
+`modules/` | User interface modules
+`modules/core/` | Shared styles between modules
+`pages/` | Specific page styles
+`vendors/` | Third-party software
+`vendors/overwrites/` | Third-party overwrites
 
 
 ## General guidelines
@@ -154,7 +155,7 @@ GSS follows [mdo's guidelines](http://codeguide.co/) for HTML and CSS for seamle
 - Each declaration should appear on its own line for more accurate error reporting.
 - End all declarations with a semi-colon. The last declaration's is optional, but your code is more error prone without it.
 - Comma-separated property values should include a space after each comma (e.g., `box-shadow`).
-- Don't include spaces after commas *within* `rgb()`, `rgba()`, `hsl()`, `hsla()`, or `rect()` values. This helps differentiate multiple color values (comma, no space) from multiple property values (comma with space).
+- Don't include spaces after commas _within_ `rgb()`, `rgba()`, `hsl()`, `hsla()`, or `rect()` values. This helps differentiate multiple color values (comma, no space) from multiple property values (comma with space).
 - Don't prefix property values or color parameters with a leading zero (e.g., `.5` instead of `0.5` and `-.5px` instead of `-0.5px`).
 - Lowercase all hex values, e.g., `#fff`. Lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.
 - Use shorthand hex values where available, e.g., `#fff` instead of `#ffffff`.
