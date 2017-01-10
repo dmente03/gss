@@ -83,17 +83,18 @@ In which `button` is the module; `is-primary`, `is-large`,  `is-submitting` are 
 ### Core modules
 Some modules are more important than others and may cascade throughout the stylesheet. These notorious blocks are the most basic building units, and some of its parts — like variables and mixins — may spread to other modules. E.g.: colors, typographic scale, grid measures, motion callouts etc.
 
-Core Modules _(ordered by importance)_ | Description
--------------------------------------- | ---------------
+Core modules | Description
+------------ | ---------------
 `core` / `utils` | Functions, helper classes and uncategorized mixins
 `core` / `colors` | Colors, sorted by name and semantic purpose (e.g.: `blue` and `primary`)
-`core` / `type` | Typographic modular scale, variables and basic text elements styles (`h1`,  `p`, etc)
+`core` / `type` | Typographic modular scale and text elements (`h1`,  `p`, etc) 
 `core` / `grid` / `grid` | Dimensions, rows, containers, alignments and responsive rules
 `core` / `grid` / `columns` | Columns, offsetting, nesting, ordering and more responsive rules
 `core` / `motion` | Keyframes, triggers and special mixins for UI animation
+_(ordered by importance)_
 
 ### Other modules
-Examples of Modules | Description
+Examples of modules | Description
 ------------------- | ---------------
 `articles` | Articles layouts
 `alerts` | Alerts and notifications
