@@ -15,7 +15,7 @@ GSS is a module-based approach to CSS structuration with a human-friendly syntax
 - Use of `lisp-case` for naming classes. All lowercase.
 - Words separated by a single hyphen (never double).
 - Modules are only named by its purpose.
-- Attributes are named by either its purpose, appearance, behavior or dependence. They must be prefixed with a verb or a preposition.
+- Attributes of a module are named by either its purpose, appearance, behavior or dependence. They must be prefixed with a verb or a preposition.
 - Both modules and attributes are separated by a space in the HTML or `.` in the CSS or nested in SCSS/LESS.
 
 
@@ -146,7 +146,7 @@ vendors/  ............................................  Third-party software
 GSS follows [mdo's guidelines](http://codeguide.co/) for HTML and CSS for seamless coding experience. Regarding stylesheets, you should pay attention specially for the topics bellow.
 
 ### Syntax
-- Use soft tabs with two spaces—they're the only way to guarantee code renders the same in any environment.
+- Use soft tabs with two spaces — they're the only way to guarantee code renders the same in any environment.
 - When grouping selectors, keep individual selectors to a single line.
 - Include one space before the opening brace of declaration blocks for legibility.
 - Place closing braces of declaration blocks on a new line.
