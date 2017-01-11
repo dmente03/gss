@@ -30,6 +30,7 @@ An attribute is a part and/or an extension of the parent module (or a module of 
 #### Example
 ```html
 <!--    A module ↴     Its attributes ↴     Its dependence ↴  -->
+<!--           –––––– ––––––––––––––––––––––––––––––––– –––––––-->
 <button class="button is-primary is-large is-submitting has-icon">
   …
 </button>
@@ -97,7 +98,7 @@ Core modules | Description
 `core`/`grid`/`columns.scss` | Columns, offsetting, nesting, ordering and more responsive rules
 
 ### Regular modules
-The naming scheme of classes and files are: if it's a file, then is plural; if it's the module class name, then is singular.
+The naming scheme of classes and files is: if it's a file, then is plural; if it's the module class name, then is singular.
 
 Examples of modules | Description
 ------------------- | ---------------
