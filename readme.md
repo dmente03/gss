@@ -83,7 +83,7 @@ In which `button` is the module; `is-primary`, `is-large`,  `is-submitting` are 
 </div>
 ```
 
-### Core modules
+## Core modules
 Some modules are more important than others and may cascade throughout the stylesheet. These notorious blocks are the most basic building units, and some of its parts — like variables and mixins — may spread to other modules. E.g.: colors, typographic scale, common attributes, grid measures, etc.
 
 _(ordered by importance)_
@@ -97,7 +97,7 @@ Core modules | Description
 `core`/`grid`/`grid.scss` | Dimensions, rows, containers, alignments and responsive rules
 `core`/`grid`/`columns.scss` | Columns, offsetting, nesting, ordering and more responsive rules
 
-### Regular modules
+## Regular modules
 The naming scheme of classes and files is: if it's a file, then is plural; if it's the module class name, then is singular.
 
 Examples of modules | Description
@@ -122,10 +122,10 @@ Examples of modules | Description
 `tables`/`cells.scss` | Table cells, rows and columns
 `…` | …
 
-### Specific page styles
+## Specific page styles
 Sometimes, it's hard to map some user interface components (or aspects) to modules. Also, there may be specific styles that make more sense belonging to a page rather than a building block. For that, there is the `pages/`  folder. These styles classes are prefixed with `page-`.
 
-### Vendors
+## Vendors
 The open source world is vast and vibrant. In order to deal with these huge amount of awesomeness, it's prudent to specify what you relies on and overwrites over. GSS does this by separating the overwrites into its own folder and files. These style classes are prefixed with `vendor-`.
 
 
