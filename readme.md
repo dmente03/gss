@@ -31,7 +31,7 @@ An **attribute** is a part and/or an extension of the parent module (or a module
 #### Example
 ```html
 <!--    A module ↴     Its attributes ↴     Its dependence ↴  -->
-<!--           –––––– ––––––––––––––––––––––––––––––––– –––––––-->
+<!--            ––––   –––––––––––––––––––––––––––––––   –------ >
 <button class="button is-primary is-large is-submitting has-icon">
   …
 </button>
@@ -84,7 +84,7 @@ In which `button` is the module; `is-primary`, `is-large`,  `is-submitting` are 
 </div>
 ```
 
-### Core modules
+## Core modules
 Some modules are more important than others and may cascade throughout the stylesheet. These notorious blocks are the most basic building units, and some of its parts — like variables and mixins — may spread to other modules. E.g.: colors, typographic scale, common attributes, grid measures, etc.
 
 _(ordered by importance)_
@@ -98,7 +98,7 @@ Core modules | Description
 `core/grid/grid.scss` | Dimensions, rows, containers, alignments and responsive rules
 `core/grid/columns.scss` | Columns, offsetting, nesting, ordering and more responsive rules
 
-### Regular modules
+## Regular modules
 The naming scheme of classes and files is: if it's a file, then is plural; if it's the module class name, then is singular.
 
 Examples of modules | Description
@@ -128,7 +128,6 @@ Sometimes, it's hard to map some user interface components (or aspects) to modul
 
 ### Vendors
 The open source world is vast and vibrant. In order to deal with these huge amount of awesomeness, it's prudent to specify what you relies on and overwrites over. GSS does this by separating the overwrites into its own folder and files. These style classes must be prefixed with `.vendor-`.
-
 
 ### File structure
 
