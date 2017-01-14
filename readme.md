@@ -2,6 +2,7 @@
 
 GSS is a module-based approach to CSS structuration with a human-friendly syntax. The main idea is to divide the user interface into (almost) independent modules, which in turn contain attributes that can be combined to compose variations of their parent module. All of that alongside a more natural readability of the classes. This way, it’s easy to understand, develop and maintain stylesheets, from small to big projects.
 
+
 ## Features
 
 - Modular styling.
@@ -23,9 +24,9 @@ GSS is a module-based approach to CSS structuration with a human-friendly syntax
 
 Essentially, every user interface part is a module, and ideally, they should be the most independent and self-contained from other modules as possible.
 
-A module can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid for example). They are named by its _purpose_. E.g.: `button`, or `grid`.
+A **module** can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid for example). They are named by its _purpose_. E.g.: `button`, or `grid`.
 
-An attribute is a part and/or an extension of the parent module (or a module of a module) — and can only exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its _purpose_, _appearance_, _behavior_ or _dependence_. E.g.: `is-primary`, `is-large`,  `is-submitting` or `has-icon`.
+An **attribute** is a part and/or an extension of the parent module (or a module of a module) — and can only exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its _purpose_, _appearance_, _behavior_ or _dependence_. E.g.: `is-primary`, `is-large`,  `is-submitting` or `has-icon`.
 
 #### Example
 ```html
@@ -90,12 +91,12 @@ _(ordered by importance)_
 
 Core modules | Description
 ------------ | ---------------
-`core`/`utils.scss` | Functions and uncategorized mixins
-`core`/`colors.scss` | Colors, sorted by name and semantic purpose (e.g.: `blue` and `primary`)
-`core`/`type.scss` | Typographic modular scale and text elements (`h1`,  `p`, etc)
-`core`/`attributes.scss` | Shared attributes between different modules
-`core`/`grid`/`grid.scss` | Dimensions, rows, containers, alignments and responsive rules
-`core`/`grid`/`columns.scss` | Columns, offsetting, nesting, ordering and more responsive rules
+`core/utils.scss` | Functions and uncategorized mixins
+`core/colors.scss` | Colors, sorted by name and semantic purpose (e.g.: `blue` and `primary`)
+`core/type.scss` | Typographic modular scale and text elements (`h1`,  `p`, etc)
+`core/attributes.scss` | Shared attributes between different modules
+`core/grid/grid.scss` | Dimensions, rows, containers, alignments and responsive rules
+`core/grid/columns.scss` | Columns, offsetting, nesting, ordering and more responsive rules
 
 ### Regular modules
 The naming scheme of classes and files is: if it's a file, then is plural; if it's the module class name, then is singular.
@@ -118,20 +119,18 @@ Examples of modules | Description
 `motion.scss` | Keyframes, triggers and special mixins for UI animation
 `overlays.scss` | Modals, popovers and other things that overlays basic UI
 `sections.scss` | Special sections layouts
-`tables`/`tables.scss` | Tables header, body and footer layouts
-`tables`/`cells.scss` | Table cells, rows and columns
+`tables/tables.scss` | Tables header, body and footer layouts
+`tables/cells.scss` | Table cells, rows and columns
 `…` | …
 
 ### Specific page styles
-Sometimes, it's hard to map some user interface components (or aspects) to modules. Also, there may be specific styles that make more sense belonging to a page rather than a building block. For that, there is the `pages/`  folder. These styles classes are prefixed with `page-`.
+Sometimes, it's hard to map some user interface components (or aspects) to modules. Also, there may be specific styles that make more sense belonging to a page rather than a building block. For that, there is the `pages/`  folder. These styles classes must be prefixed with `.page-`.
 
 ### Vendors
-The open source world is vast and vibrant. In order to deal with these huge amount of awesomeness, it's prudent to specify what you relies on and overwrites over. GSS does this by separating the overwrites into its own folder and files. These style classes are prefixed with `vendor-`.
+The open source world is vast and vibrant. In order to deal with these huge amount of awesomeness, it's prudent to specify what you relies on and overwrites over. GSS does this by separating the overwrites into its own folder and files. These style classes must be prefixed with `.vendor-`.
 
 
-## Front-end file structure (CSS + JS)
-
-Both CSS and JS files can be separate to maintain a framework's structure (e.g.: CSS inside `stylesheets/` and JS in `javascripts/`). However, it would be nice to replicate their very same structure on its specific folders.
+### File structure
 
 Folder | Description
 ------ | -----------
