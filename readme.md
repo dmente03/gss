@@ -165,7 +165,6 @@ Folder | Description
 GSS follows [mdo's guidelines](http://codeguide.co/) for HTML and CSS for seamless coding experience. Regarding stylesheets, you should pay attention specially for the topics bellow.
 
 ### Syntax
-_From [Code Guide](http://codeguide.co/)._
 - Use soft tabs with two spaces — they're the only way to guarantee code renders the same in any environment.
 - When grouping selectors, keep individual selectors to a single line.
 - Include one space before the opening brace of declaration blocks for legibility.
@@ -180,6 +179,7 @@ _From [Code Guide](http://codeguide.co/)._
 - Use shorthand hex values where available, e.g., `#fff` instead of `#ffffff`.
 - Quote attribute values in selectors, e.g., `input[type="text"]`. [They’re only optional in some cases](http://mathiasbynens.be/notes/unquoted-attribute-values#css), and it’s a good practice for consistency.
 - Avoid specifying units for zero values, e.g., `margin: 0;`instead of `margin: 0px;`.
+_From [Code Guide](http://codeguide.co/)._
 
 ### Order of styles inside a module
 1. Variables
@@ -189,22 +189,20 @@ _From [Code Guide](http://codeguide.co/)._
 5. Module attribute class — `.input.is-large {}`
 
 ### Order of properties inside a style
-_From [Code Guide](http://codeguide.co/)._
 1. Positioning — `position`,  `left`, …
 2. Box model — `display`,  `float`,  `width`,  `padding`,  `margin` …
 3. Typographic — `font`,  `text-align`, …
 4. Visual — `background`,  `border`, …
 5. Misc — `opacity`, …
+_From [Code Guide](http://codeguide.co/)._
 
 ### Single declarations
-_From [Code Guide](http://codeguide.co/)._
-
 In instances where a rule set includes _only one declaration_, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines.
+_From [Code Guide](http://codeguide.co/)._
 
 ### Comments
-_From [Code Guide](http://codeguide.co/)._
-
 Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name. Be sure to write in complete sentences for larger comments and succinct phrases for general notes.
+_From [Code Guide](http://codeguide.co/)._
 
 ### Linter
 Use [SCSS Lint](https://github.com/brigade/scss-lint) to help you be on the right track. Install its [plugin](https://github.com/brigade/scss-lint#editor-integration) on your editor of choice. Also, use the [GSS configuration file](https://gist.github.com/sergiofontes/47ec6addc1768855b3e7b2aba992f96f) to remain compliant with these standards.
