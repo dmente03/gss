@@ -32,14 +32,13 @@ An **attribute** is a part and/or an extension of the parent module (or a module
 
 #### Example
 ```html
-<!--    A module ↴     Its attributes ↴     Its dependence ↴  -->
+<!--    A module ↴     Its attributes ↴      Its dependence ↴  -->
 <!--            ––––   –––––––––––––––––––––––––––––––   –——-—-- >
 <button class="button is-primary is-large is-submitting has-icon">
   …
 </button>
 ```
 
-The CSS of the example above.
 ```css
 button, .button {
   display: inline-block;
@@ -199,10 +198,12 @@ _From [Code Guide](http://codeguide.co/)._
 
 ### Single declarations
 _From [Code Guide](http://codeguide.co/)._
+
 In instances where a rule set includes _only one declaration_, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines.
 
 ### Comments
 _From [Code Guide](http://codeguide.co/)._
+
 Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name. Be sure to write in complete sentences for larger comments and succinct phrases for general notes.
 
 ### Linter
