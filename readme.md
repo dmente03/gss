@@ -24,17 +24,37 @@ GSS is a module-based approach to CSS structuration with a human-friendly syntax
 
 Essentially, every user interface part is a module, and ideally, they should be the most independent and self-contained from other modules as possible.
 
+### Module
 A **module** can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid for example). They are named by its _purpose_. E.g.: `button`, or `grid`.
 
+### Attribute
 An **attribute** is a part and/or an extension of the parent module (or a module of a module) — and can only exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its _purpose_, _appearance_, _behavior_ or _dependence_. E.g.: `is-primary`, `is-large`,  `is-submitting` or `has-icon`.
 
 #### Example
 ```html
 <!--    A module ↴     Its attributes ↴     Its dependence ↴  -->
-<!--            ––––   –––––––––––––––––––––––––––––––   –------ >
+<!--            ––––   –––––––––––––––––––––––––––––––   –——-—-- >
 <button class="button is-primary is-large is-submitting has-icon">
   …
 </button>
+```
+
+The CSS of the example above.
+```css
+button, .button {
+  display: inline-block;
+  font-weight: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+}
+
+.is-primary { background-color: blue; }
+.is-large { padding: .5rem 1rem; }
+.is-submitting { cursor: progress; }
+.has-icon { position: relative; }
 ```
 In which `button` is the module; `is-primary`, `is-large`,  `is-submitting` are its attributes; and `has-icon` is its dependence from another module.
 
@@ -95,11 +115,10 @@ Core modules | Description
 `core/colors.scss` | Colors, sorted by name and semantic purpose (e.g.: `blue` and `primary`)
 `core/type.scss` | Typographic modular scale and text elements (`h1`,  `p`, etc)
 `core/attributes.scss` | Shared attributes between different modules
-`core/grid/grid.scss` | Dimensions, rows, containers, alignments and responsive rules
-`core/grid/columns.scss` | Columns, offsetting, nesting, ordering and more responsive rules
+`core/grid.scss` | Dimensions, rows, containers, alignments, columns, ordering, etc
 
 ## Regular modules
-The naming scheme of classes and files is: if it's a file, then is plural; if it's the module class name, then is singular.
+The table below shows examples of possible modules. It's up to you to decide which modules can fit in your project — or even create new different modules.
 
 Examples of modules | Description
 ------------------- | ---------------
@@ -119,8 +138,7 @@ Examples of modules | Description
 `motion.scss` | Keyframes, triggers and special mixins for UI animation
 `overlays.scss` | Modals, popovers and other things that overlays basic UI
 `sections.scss` | Special sections layouts
-`tables/tables.scss` | Tables header, body and footer layouts
-`tables/cells.scss` | Table cells, rows and columns
+`tables.scss` | Tables header, body and footer layouts, cells, rows and columns
 `…` | …
 
 ### Specific page styles
@@ -130,6 +148,7 @@ Sometimes, it's hard to map some user interface components (or aspects) to modul
 The open source world is vast and vibrant. In order to deal with these huge amount of awesomeness, it's prudent to specify what you relies on and overwrites over. GSS does this by separating the overwrites into its own folder and files. These style classes must be prefixed with `.vendor-`.
 
 ### File structure
+The naming scheme of classes and files is: if it's a file, then is plural; if it's the module class name, then is singular.
 
 Folder | Description
 ------ | -----------
@@ -140,13 +159,14 @@ Folder | Description
 `vendors/overwrites/` | Third-party overwrites
 
 
-## General guidelines
+## Code guidelines
 
 > Every line of code should appear to be written by a single person, no matter the number of contributors.
 
 GSS follows [mdo's guidelines](http://codeguide.co/) for HTML and CSS for seamless coding experience. Regarding stylesheets, you should pay attention specially for the topics bellow.
 
 ### Syntax
+_From [Code Guide](http://codeguide.co/)._
 - Use soft tabs with two spaces — they're the only way to guarantee code renders the same in any environment.
 - When grouping selectors, keep individual selectors to a single line.
 - Include one space before the opening brace of declaration blocks for legibility.
@@ -170,6 +190,7 @@ GSS follows [mdo's guidelines](http://codeguide.co/) for HTML and CSS for seamle
 5. Module attribute class — `.input.is-large {}`
 
 ### Order of properties inside a style
+_From [Code Guide](http://codeguide.co/)._
 1. Positioning — `position`,  `left`, …
 2. Box model — `display`,  `float`,  `width`,  `padding`,  `margin` …
 3. Typographic — `font`,  `text-align`, …
@@ -177,11 +198,25 @@ GSS follows [mdo's guidelines](http://codeguide.co/) for HTML and CSS for seamle
 5. Misc — `opacity`, …
 
 ### Single declarations
+_From [Code Guide](http://codeguide.co/)._
 In instances where a rule set includes _only one declaration_, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines.
 
 ### Comments
+_From [Code Guide](http://codeguide.co/)._
 Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name. Be sure to write in complete sentences for larger comments and succinct phrases for general notes.
 
+### Linter
+Use [SCSS Lint](https://github.com/brigade/scss-lint) to help you be on the right track. Install its [plugin](https://github.com/brigade/scss-lint#editor-integration) on your editor of choice. Also, use the [GSS configuration file](https://gist.github.com/sergiofontes/47ec6addc1768855b3e7b2aba992f96f) to remain compliant with these standards.
+
+## Git guidelines
+
+Keep an eye on Guava's [git standards](https://github.com/guava/standards/blob/master/git.md) and on the following naming convention for branches.
+* Use hyphen to separate words (eg.: `name-of-branch`).
+* Use slash to separate branch prefix from branch name (eg.: `prefix/name-of-branch`).
+* `master` — the main branch of design version.
+* `feature/…` — adds something new.
+* `fix/…` — fixes one or more bugs.
+* `chore/…` — improves perfomance, etc.
 
 ## Further reading
 
