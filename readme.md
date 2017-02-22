@@ -17,7 +17,7 @@ It's heavily inspired by a lot of great ideas, like Atomic Design, SMACSS, mdo's
 - Use of `lisp-case` for naming classes. All lowercase.
 - Words separated by a single hyphen (never double).
 - Modules and attributes are separated by a space in the HTML or `.` in the CSS or nested in SCSS/LESS.
-- Different modules in a same HTML element are separated by a slash (e.g.: '<span class="icon of-submit / motion of-submiting">') for visual convenience.
+- Different modules in a same HTML element are separated by a slash (e.g.: `<span class="icon of-submit / motion of-submiting">`) for visual convenience.
 
 ## How it works
 Essentially, every user interface piece is (or can be) a module, and ideally, they should be the most independent and self-contained from other modules as possible.
