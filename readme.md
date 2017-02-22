@@ -12,13 +12,12 @@ It's heavily inspired by a lot of great ideas, like Atomic Design, SMACSS, mdo's
 - Simple structure that leverages the power of cascading stylesheet.
 
 ### Naming principles
-- Use of `lisp-case` for naming classes. All lowercase.
-- Words separated by a single hyphen (never double).
 - Modules are only named by its purpose.
 - Attributes of a module are named by either its purpose, appearance, behavior or dependence. They must be prefixed with a verb or a preposition.
-- Both modules and attributes are separated by a space in the HTML or `.` in the CSS or nested in SCSS/LESS.
-- A module can either contain base styles (that are combined with its attributes, like `.button`) or not (in this case, by being just an remark of the current module file, e.g.: `.grid`).
-- The modules are created _by demand_ of developers and designers (except the core modules).
+- Use of `lisp-case` for naming classes. All lowercase.
+- Words separated by a single hyphen (never double).
+- Modules and attributes are separated by a space in the HTML or `.` in the CSS or nested in SCSS/LESS.
+- Different modules in a same HTML element are separated by a slash (e.g.: '<span class="icon of-submit / motion of-submiting">') for visual convenience.
 
 ## How it works
 Essentially, every user interface piece is (or can be) a module, and ideally, they should be the most independent and self-contained from other modules as possible.
@@ -32,20 +31,18 @@ A **module** can range from a basic piece of a standalone HTML element (like a s
 ### Example
 ![Example](https://dl.dropboxusercontent.com/u/13659411/Guava/gssexample.svg)
 
+#### The markup
+_Note that the combination of modules and attributes brings an intuitive understanding of how this UI piece looks like._
 ```html
-<!--
-The markup.
-Note that the combination of modules and attributes brings an intuitive understanding of how this UI piece looks like.
--->
 <button class="button is-primary is-large has-icon">
   Submit
   <span class="icon of-submit"></span>
 </button>
 ```
 
+#### Button's module stylesheet
 ```css
-/* Buttons' module stylesheet. */
-button, .button {                          /* Module */
+button, .button {                         /* Module */
   display: inline-block;
   padding: .2rem .5rem;
   color: black;
@@ -58,30 +55,32 @@ button, .button {                          /* Module */
   border: 2px solid black;
 }
 
-.button.is-primary {                    /* Attribute */
+.button.is-primary {                       /* Attribute */
   color: #f6494d;
   background-color: #f6494d;
 }
 
-.button.is-large { padding: .5rem 1rem; }  /* Attribute */
-.button.has-icon { position: relative; }   /* Attribute */
+.button.is-large { padding: .5rem 1rem; } /* Attribute */
+.button.has-icon { position: relative; }  /* Attribute */
 ```
 
+#### Icon's module stylesheet
 ```css
-/* Icons' module stylesheet. */
-.icon {                                    /* Module */
+.icon {                                   /* Module */
   display: inline-block;
   width: 1rem;
   height: 1rem;
 }
 
-.icon.of-submit {                          /* Attribute */
+.icon.of-submit {                         /* Attribute */
   position: absolute;
   top: .5rem;
   right: 1rem;
   background-image: url("...");  
 }
 ```
+P.S.: A module can either contain base styles (that are combined with its attributes, like `.button`) or not (in this case, by being just an remark of the current module file, e.g.: `.grid`).
+P.S.2: The modules are created _by demand_ of developers and designers (except the [core modules](https://github.com/guava/gss#the-core)).
 
 ## Modules and stylesheets structure
 
