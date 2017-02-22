@@ -17,7 +17,7 @@ It's heavily inspired by a lot of great ideas, like Atomic Design, SMACSS, mdo's
 - Modules are only named by its purpose.
 - Attributes of a module are named by either its purpose, appearance, behavior or dependence. They must be prefixed with a verb or a preposition.
 - Both modules and attributes are separated by a space in the HTML or `.` in the CSS or nested in SCSS/LESS.
-- A module can whether contain base styles (that are combined with its attributes, like `.button`) or not (in this case, by being just an remark of the current module file, e.g.: `.grid`).
+- A module can either contain base styles (that are combined with its attributes, like `.button`) or not (in this case, by being just an remark of the current module file, e.g.: `.grid`).
 - The modules are created _by demand_ of developers and designers (except the core modules).
 
 ## How it works
@@ -197,7 +197,7 @@ _(From [Code Guide](http://codeguide.co/).)_
 Use [SCSS Lint](https://github.com/brigade/scss-lint) to help you be on the right track. Install its [plugin](https://github.com/brigade/scss-lint#editor-integration) on your editor of choice. Also, use the [GSS configuration file](https://gist.github.com/sergiofontes/47ec6addc1768855b3e7b2aba992f96f) to remain compliant with these standards.
 
 ### Autoprefixer
-Finally, use [Autoprefixer](https://github.com/postcss/autoprefixer) to deal with CSS vendor prefixes. In other words, you must not manually write these annoying prefixes — let the PostCSS' [Autoprefixer](https://github.com/postcss/autoprefixer) do it for you. Doing this, you keep the code clean and also improve maintainability, since you can easily configure what browsers the project should support.
+Use [Autoprefixer](https://github.com/postcss/autoprefixer) to deal with CSS vendor prefixes. In other words, you must not manually write these annoying prefixes — let the PostCSS' [Autoprefixer](https://github.com/postcss/autoprefixer) do it for you. Doing this, you keep the code clean and also improve maintainability, since you can easily configure what browsers the project should support.
 
 ### Git
 Keep an eye on Guava's [Git standards](https://github.com/guava/standards/blob/master/git.md) and on the following naming convention for branches.
