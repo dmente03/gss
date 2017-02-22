@@ -80,6 +80,7 @@ button, .button {                         /* Module */
 }
 ```
 P.S.: A module can either contain base styles (that are combined with its attributes, like `.button`) or not (in this case, by being just an remark of the current module file, e.g.: `.grid`).
+
 P.S.2: The modules are created _by demand_ of developers and designers (except the [core modules](https://github.com/guava/gss#the-core)).
 
 ## Modules and stylesheets structure
