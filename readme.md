@@ -17,7 +17,7 @@ It's heavily inspired by a lot of great ideas, like Atomic Design, SMACSS, mdo's
 - Use of `lisp-case` for naming classes. All lowercase.
 - Words separated by a single hyphen (never double).
 - Modules and attributes are separated by a space in the HTML or `.` in the CSS or nested in SCSS/LESS.
-- Different modules in a same HTML element are separated by a slash (e.g.: `<span class="icon of-submit / motion of-submiting">`) for visual convenience.
+- Different modules in a same HTML element are separated by a slash (e.g., `<span class="icon of-submit / motion of-submiting">`) for visual convenience.
 
 ## How it works
 Essentially, every user interface piece is (or can be) a module, and ideally, they should be the most independent and self-contained from other modules as possible.
@@ -81,7 +81,7 @@ button, .button {                         /* Module */
   background-image: url("...");  
 }
 ```
-P.S.: A module can either contain base styles (that are combined with its attributes, like `.button`) or not (in this case, by being just an remark of the current module file, e.g.: `.grid`).
+P.S.: A module can either contain base styles (that are combined with its attributes, like `.button`) or not (in this case, by being just an remark of the current module file, e.g., `.grid`).
 
 P.S.2: The modules are created _by demand_ of developers and designers (except the [core modules](https://github.com/guava/gss#the-core)).
 
@@ -93,7 +93,7 @@ Some modules are more important than others and may cascade throughout the style
 Core modules | Description
 ------------ | ---------------
 `core/utils.scss` | Functions and uncategorized mixins
-`core/colors.scss` | Colors, sorted by name and semantic purpose (e.g.: `blue` and `primary`)
+`core/colors.scss` | Colors, sorted by name and semantic purpose (e.g., `blue` and `primary`)
 `core/type.scss` | Typographic modular scale and text elements (`h1`,  `p`, etc)
 `core/grid.scss` | Dimensions, rows, containers, alignments, columns, ordering, etc
 `core/attributes.scss` | Shared attributes between different modules
