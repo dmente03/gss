@@ -57,7 +57,9 @@ button, .button {                         /* Module */
 
 .button.is-primary {                       /* Attribute */
   color: #f6494d;
-  background-color: #f6494d;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  border-color: #f6494d;
 }
 
 .button.is-large { padding: .5rem 1rem; } /* Attribute */
