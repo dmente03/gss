@@ -29,8 +29,7 @@ The stylesheets are organized by:
 
 A **module** can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid for example). They are named by its _purpose_. An **attribute** is a part and/or an extension of the parent module (or a module of a module) — and can only exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its _purpose_, _appearance_, _behavior_ or _dependence_.
 
-#### Example
-_A submit button._
+### Example
 ![Example](https://dl.dropboxusercontent.com/u/13659411/Guava/gssexample.svg)
 
 ```html
