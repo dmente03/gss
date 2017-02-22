@@ -33,16 +33,19 @@ A **module** can range from a basic piece of a standalone HTML element (like a s
 _A submit button._
 ![Example](https://dl.dropboxusercontent.com/u/13659411/Guava/gssexample.svg)
 
-_The markup. Note that the combination of modules and attributes brings an intuitive understanding of how this UI piece looks like._
 ```html
+<!--
+The markup.
+Note that the combination of modules and attributes brings an intuitive understanding of how this UI piece looks like.
+-->
 <button class="button is-primary is-large has-icon">
   Submit
   <span class="icon of-submit"></span>
 </button>
 ```
 
-_Buttons module stylesheet._
 ```css
+/* Buttons' module stylesheet. */
 button, .button {                          /* Module */
   display: inline-block;
   border: 2px solid black;
@@ -56,16 +59,17 @@ button, .button {                          /* Module */
   appearance: none;
 }
 
-.button.is-primary    {                    /* Attribute */
+.button.is-primary {                    /* Attribute */
   background-color: #f6494d;
   color: #f6494d;
 }
+
 .button.is-large { padding: .5rem 1rem; }  /* Attribute */
 .button.has-icon { position: relative; }   /* Attribute */
 ```
 
-_Icons module stylesheet._
 ```css
+/* Icons' module stylesheet. */
 .icon {                                    /* Module */
   display: inline-block;
   width: 1rem;
@@ -83,9 +87,7 @@ _Icons module stylesheet._
 ## Modules and stylesheets structure
 
 ### The core
-Some modules are more important than others and may cascade throughout the stylesheet. These notorious blocks are the most basic building units, and some of its parts — like variables and mixins — may spread to other modules. E.g.: colors, typographic scale, common attributes, grid measures, etc.
-
-_(ordered by importance)_
+Some modules are more important than others and may cascade throughout the stylesheet. These notorious blocks are the most basic building units, and some of them — like typography, colors, functions and global attributes — may spread to other modules.
 
 Core modules | Description
 ------------ | ---------------
@@ -95,7 +97,9 @@ Core modules | Description
 `core/grid.scss` | Dimensions, rows, containers, alignments, columns, ordering, etc
 `core/attributes.scss` | Shared attributes between different modules
 
-## Other modules
+_(Ordered by importance.)_
+
+### Other modules
 The table below shows _examples_ of possible modules. It's up to developers and designers decide which modules can fit in your project — or even create new different modules.
 
 Examples of modules | Description
@@ -119,6 +123,8 @@ Examples of modules | Description
 `tables.scss` | Tables header, body and footer layouts, cells, rows and columns
 `…` | …
 
+_(Examples of modules.)_
+
 ### Specific page styles
 Sometimes, it's hard to map some user interface components (or aspects) to modules. Also, there may be specific styles that make more sense belonging to a page rather than a building block. For that, there is the `pages/`  folder. These styles classes must be prefixed with `.page-`.
 
@@ -130,11 +136,13 @@ The naming scheme of classes and files is: if it's a file, then is plural; if it
 
 Folder | Description
 ------ | -----------
-`modules/` | User interface modules
-`modules/core/` | Shared styles between modules
-`pages/` | Specific page styles
 `vendors/` | Third-party software
 `vendors/overwrites/` | Third-party overwrites
+`modules/core/` | Shared styles between modules
+`modules/` | User interface modules
+`pages/` | Specific page styles
+
+_(Ordered by importance.)_
 
 ## Code guidelines
 
@@ -172,14 +180,17 @@ _(From [Code Guide](http://codeguide.co/).)_
 3. Typographic — `font`,  `text-align`, …
 4. Visual — `background`,  `border`, …
 5. Misc — `opacity`, …
+
 _(From [Code Guide](http://codeguide.co/).)_
 
 ### Single declarations
 In instances where a rule set includes _only one declaration_, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines.
+
 _(From [Code Guide](http://codeguide.co/).)_
 
 ### Comments
 Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name. Be sure to write in complete sentences for larger comments and succinct phrases for general notes.
+
 _(From [Code Guide](http://codeguide.co/).)_
 
 ### Linter
@@ -189,7 +200,7 @@ Use [SCSS Lint](https://github.com/brigade/scss-lint) to help you be on the righ
 Finally, use [Autoprefixer](https://github.com/postcss/autoprefixer) to deal with CSS vendor prefixes. In other words, you must not manually write these annoying prefixes — let the PostCSS' [Autoprefixer](https://github.com/postcss/autoprefixer) do it for you. Doing this, you keep the code clean and also improve maintainability, since you can easily configure what browsers the project should support.
 
 ### Git
-Keep an eye on Guava's [git standards](https://github.com/guava/standards/blob/master/git.md) and on the following naming convention for branches.
+Keep an eye on Guava's [Git standards](https://github.com/guava/standards/blob/master/git.md) and on the following naming convention for branches.
 * Use hyphen to separate words (eg.: `name-of-branch`).
 * Use slash to separate branch prefix from branch name (eg.: `prefix/name-of-branch`).
 * `master` — the main branch of design version.
