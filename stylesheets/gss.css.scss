@@ -7,6 +7,9 @@
 // Vendors ....................... Thirdy-party software //
 // @import "vendors/…";
 
+// Vendor Overwrites ............ Third-party overwrites //
+@import "vendors/overwrites/vendor-name";
+
 // Core modules .......... Shared styles between modules //
 @import "modules/core/utils";
 @import "modules/core/colors";
@@ -34,6 +37,3 @@
 
 // Pages ......................... Specific page styling //
 @import "pages/page-name";
-
-// Vendor Overwrites ............ Third-party overwrites //
-@import "vendors/overwrites/vendor-name";
