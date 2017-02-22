@@ -55,7 +55,7 @@ button, .button {                         /* Module */
   border: 2px solid black;
 }
 
-.button.is-primary {                       /* Attribute */
+.button.is-primary {                      /* Attribute */
   color: #f6494d;
   letter-spacing: .1rem;
   text-transform: uppercase;
