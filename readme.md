@@ -47,20 +47,20 @@ Note that the combination of modules and attributes brings an intuitive understa
 /* Buttons' module stylesheet. */
 button, .button {                          /* Module */
   display: inline-block;
-  border: 2px solid black;
-  color: black;
   padding: .2rem .5rem;
+  color: black;
   font-weight: 1rem;
   line-height: 1rem;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   appearance: none;
+  border: 2px solid black;
 }
 
 .button.is-primary {                    /* Attribute */
-  background-color: #f6494d;
   color: #f6494d;
+  background-color: #f6494d;
 }
 
 .button.is-large { padding: .5rem 1rem; }  /* Attribute */
@@ -76,10 +76,10 @@ button, .button {                          /* Module */
 }
 
 .icon.of-submit {                          /* Attribute */
-  background-image: url("...");  
   position: absolute;
   top: .5rem;
   right: 1rem;
+  background-image: url("...");  
 }
 ```
 
