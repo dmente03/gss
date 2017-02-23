@@ -69,13 +69,13 @@ button, .button {                         /* Module */
 #### Icon's module stylesheet
 ```css
 .icon {                                   /* Module */
+  position: absolute;
   display: inline-block;
   width: 1rem;
   height: 1rem;
 }
 
 .icon.of-submit {                         /* Attribute */
-  position: absolute;
   top: .5rem;
   right: 1rem;
   background-image: url("...");  
@@ -88,7 +88,7 @@ P.S.2: The modules are created _by demand_ of developers and designers (except t
 ## Modules and stylesheets structure
 
 ### The core
-Some modules are more important than others and may cascade throughout the stylesheet. These notorious blocks are the most basic building units, and some of them — like typography, colors, functions and global attributes — may spread to other modules.
+Some modules are more important than others, composing the most basic building units. Usually, they cascade throughout the stylesheet. GSS calls them of core modules.
 
 Core modules | Description
 ------------ | ---------------
