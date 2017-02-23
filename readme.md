@@ -12,8 +12,8 @@ It's heavily inspired by a lot of great ideas, like Atomic Design, SMACSS, mdo's
 - Simple structure that leverages the power of cascading stylesheet.
 
 ### Naming principles
-- Modules are only named by its purpose. E.g., `button`.
-- Attributes of a module are named by either its purpose, appearance, behavior or dependence. They must be prefixed with a verb or a preposition. E.g., `is-primary`, `is-large`.
+- Modules are only named by its purpose (e.g., `button`).
+- Attributes of a module are named by either its purpose, appearance, behavior or dependence. They must be prefixed with a verb or a preposition (e.g., `is-primary`, `is-large`).
 - Use of `lisp-case` for naming classes. All lowercase.
 - Words separated by a single hyphen (never double).
 - Modules and attributes are separated by a space in the HTML or `.` in the CSS or nested in SCSS/LESS.
