@@ -12,22 +12,23 @@ It's heavily inspired by a lot of great ideas, like Atomic Design, SMACSS, mdo's
 - Simple structure that leverages the power of cascading stylesheet.
 
 ### Naming principles
-- Modules are only named by its purpose.
-- Attributes of a module are named by either its purpose, appearance, behavior or dependence. They must be prefixed with a verb or a preposition.
+- Modules are only named by its purpose. E.g., `button`.
+- Attributes of a module are named by either its purpose, appearance, behavior or dependence. They must be prefixed with a verb or a preposition. E.g., `is-primary`, `is-large`.
 - Use of `lisp-case` for naming classes. All lowercase.
 - Words separated by a single hyphen (never double).
 - Modules and attributes are separated by a space in the HTML or `.` in the CSS or nested in SCSS/LESS.
 - Different modules in a same HTML element are separated by a slash (e.g., `<span class="icon of-submit / motion of-submiting">`) for visual convenience.
 
 ## How it works
-Essentially, every user interface piece is (or can be) a module, and ideally, they should be the most independent and self-contained from other modules as possible.
+Essentially, every user interface piece is a module, and ideally, they should be the most independent and self-contained from other modules as possible. Sometimes, a module can be a group of other smaller modules, e.g., `login-card`.
 
 The stylesheets are organized by:
 - **Independent modules** of some piece of UI.
 - **Combinable attributes**, prefixed by a verb/preposition.
 
-A **module** can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid for example). They are named by its _purpose_. An **attribute** is a part and/or an extension of the parent module (or a module of a module) — and can only exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its _purpose_, _appearance_, _behavior_ or _dependence_.
+A **module** can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid for example). They are named by its _purpose_. An **attribute** is a part and/or an extension of the parent module (or a module of a module) — and usually exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its _purpose_, _appearance_, _behavior_ or _dependence_. Sometimes, there are attributes that can be shared by other modules, e.g., `is-primary`.
 
+A **module** can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid for example). They are named by its _purpose_. An **attribute** is a part and/or an extension of the parent module (or a module of a module) — and usually exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its _purpose_, _appearance_, _behavior_ or _dependence_. Sometimes, there are attributes that can be shared by other modules, e.g., `
 ### Example
 ![Example](https://dl.dropboxusercontent.com/u/13659411/Guava/gssexample.svg)
 
