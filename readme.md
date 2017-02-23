@@ -17,16 +17,14 @@ It's heavily inspired by a lot of great ideas, like Atomic Design, SMACSS, mdo's
 - Use of `lisp-case` for naming classes. All lowercase.
 - Words separated by a single hyphen (never double).
 - Modules and attributes are separated by a space in the HTML or `.` in the CSS or nested in SCSS/LESS.
-- Different modules in a same HTML element are separated by a slash (e.g., `<span class="icon of-submit / motion of-submiting">`) for visual convenience.
+- Different modules in a same HTML element are separated by a slash (e.g., `<span class="icon of-submit / motion of-submit>`) for visual convenience.
 
 ## How it works
-Essentially, every user interface piece is (or can be) a module, and ideally, they should be the most independent and self-contained from other modules as possible.
-
-The stylesheets are organized by:
+The stylesheets are composed of:
 - **Independent modules** of some piece of UI.
 - **Combinable attributes**, prefixed by a verb/preposition.
 
-A **module** can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid for example). They are named by its _purpose_. An **attribute** is a part and/or an extension of the parent module (or a module of a module) — and can only exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its _purpose_, _appearance_, _behavior_ or _dependence_.
+A **module** can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid or a card for example). They are named by its _purpose_. An **attribute** is a part and/or an extension of the parent module (or a module of a module) — and can only exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its _purpose_, _appearance_, _behavior_ or _dependence_.
 
 ### Example
 ![Example](https://dl.dropboxusercontent.com/u/13659411/Guava/gssexample.svg)
@@ -62,7 +60,7 @@ button, .button {                         /* Module */
   border-color: #f6494d;
 }
 
-.button.is-large { padding: .5rem 1rem; } /* Attribute */
+.button.is-large { padding: .5rem 3rem; } /* Attribute */
 .button.has-icon { position: relative; }  /* Attribute */
 ```
 
@@ -81,7 +79,7 @@ button, .button {                         /* Module */
   background-image: url("...");  
 }
 ```
-P.S.: A module can either contain base styles (that are combined with its attributes, like `.button`) or not (in this case, by being just an remark of the current module file, e.g., `.grid`).
+P.S.: A module can either contain base styles (that are combined with its attributes, like the `.button` example from above) or not (in this case, by being just an remark of the current module file).
 
 P.S.2: The modules are created _by demand_ of developers and designers (except the [core modules](https://github.com/guava/gss#the-core)).
 
@@ -149,7 +147,7 @@ _(Ordered by importance.)_
 
 > Every line of code should appear to be written by a single person, no matter the number of contributors.
 
-GSS follows HTML and CSS of [mdo's Code Guide](http://codeguide.co/) for seamless coding experience. Regarding stylesheets, you should pay attention specially for the topics bellow.
+GSS follows [mdo's Code Guide](http://codeguide.co/) for seamless coding experience on HTML and CSS. Regarding stylesheets, you should pay attention specially for the topics bellow.
 
 ### Syntax
 - Use soft tabs with two spaces — they're the only way to guarantee code renders the same in any environment.
