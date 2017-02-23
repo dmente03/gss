@@ -12,8 +12,8 @@ It's heavily inspired by a lot of great ideas, like Atomic Design, SMACSS, mdo's
 - Simple structure that leverages the power of cascading stylesheet.
 
 ### Naming principles
-- Modules are only named by its purpose.
-- Attributes of a module are named by either its purpose, appearance, behavior or dependence. They must be prefixed with a verb or a preposition.
+- Modules are only named by its purpose (e.g., `button`).
+- Attributes of a module are named by either its purpose, appearance, behavior or dependence. They must be prefixed with a verb or a preposition (e.g., `is-primary`, `is-large`).
 - Use of `lisp-case` for naming classes. All lowercase.
 - Words separated by a single hyphen (never double).
 - Modules and attributes are separated by a space in the HTML or `.` in the CSS or nested in SCSS/LESS.
@@ -67,18 +67,19 @@ button, .button {                         /* Module */
 #### Icon's module stylesheet
 ```css
 .icon {                                   /* Module */
+  position: absolute;
   display: inline-block;
   width: 1rem;
   height: 1rem;
 }
 
 .icon.of-submit {                         /* Attribute */
-  position: absolute;
   top: .5rem;
   right: 1rem;
   background-image: url("...");  
 }
 ```
+
 P.S.: A module can either contain base styles (that are combined with its attributes, like the `.button` example from above) or not (in this case, by being just an remark of the current module file).
 
 P.S.2: The modules are created _by demand_ of developers and designers (except the [core modules](https://github.com/guava/gss#the-core)).
@@ -86,7 +87,7 @@ P.S.2: The modules are created _by demand_ of developers and designers (except t
 ## Modules and stylesheets structure
 
 ### The core
-Some modules are more important than others and may cascade throughout the stylesheet. These notorious blocks are the most basic building units, and some of them — like typography, colors, functions and global attributes — may spread to other modules.
+Some modules are more important than others, composing the most basic building units. Usually, they cascade throughout the stylesheet. GSS calls them of core modules.
 
 Core modules | Description
 ------------ | ---------------
@@ -164,6 +165,7 @@ GSS follows [mdo's Code Guide](http://codeguide.co/) for seamless coding experie
 - Use shorthand hex values where available, e.g., `#fff` instead of `#ffffff`.
 - Quote attribute values in selectors, e.g., `input[type="text"]`. [They’re only optional in some cases](http://mathiasbynens.be/notes/unquoted-attribute-values#css), and it’s a good practice for consistency.
 - Avoid specifying units for zero values, e.g., `margin: 0;`instead of `margin: 0px;`.
+
 _(From [Code Guide](http://codeguide.co/).)_
 
 ### Order of styles inside a module
@@ -183,14 +185,10 @@ _(From [Code Guide](http://codeguide.co/).)_
 _(From [Code Guide](http://codeguide.co/).)_
 
 ### Single declarations
-In instances where a rule set includes _only one declaration_, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines.
-
-_(From [Code Guide](http://codeguide.co/).)_
+In instances where a rule set includes _only one declaration_, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines. _(From [Code Guide](http://codeguide.co/).)_
 
 ### Comments
-Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name. Be sure to write in complete sentences for larger comments and succinct phrases for general notes.
-
-_(From [Code Guide](http://codeguide.co/).)_
+Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name. Be sure to write in complete sentences for larger comments and succinct phrases for general notes. _(From [Code Guide](http://codeguide.co/).)_
 
 ### Linter
 Use [SCSS Lint](https://github.com/brigade/scss-lint) to help you be on the right track. Install its [plugin](https://github.com/brigade/scss-lint#editor-integration) on your editor of choice. Also, use the [GSS configuration file](https://gist.github.com/sergiofontes/47ec6addc1768855b3e7b2aba992f96f) to remain compliant with these standards.
