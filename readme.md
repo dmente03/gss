@@ -20,10 +20,10 @@ The stylesheets are composed of:
 
 A **module** can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid or a card for example). They are named by its _purpose_. An **attribute** is a part and/or an extension of the parent module (or a module of a module) — and can only exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its _purpose_, _appearance_, _behavior_ or _dependence_.
 
-### A simple example
+### One simple example
 ![Example](https://dl.dropboxusercontent.com/u/13659411/Guava/gssexample.svg)
 
-#### The markup
+#### Markup
 _Note that the combination of modules and attributes brings an intuitive understanding of how this UI piece looks like._
 ```html
 <button class="button is-primary is-large has-icon">
@@ -129,13 +129,13 @@ Examples of modules | Description
 
 _(Examples of modules.)_
 
-#### Specific page styles
+#### Specific page stylesheets
 Sometimes, it's hard to map some user interface components (or aspects) to modules. Also, there may be specific styles that make more sense belonging to a page rather than a building block. For that, there is the `pages/`  folder. These styles classes must be prefixed with `.page-`.
 
 #### Dealing with vendors
 The open source world is vast and vibrant. In order to deal with these huge amount of awesomeness, it's prudent to specify what you relies on and overwrites over. GSS does this by separating the overwrites into its own folder and files. These style classes must be prefixed with `.vendor-`.
 
-#### Placing
+#### Everything in its right place
 The naming scheme of classes and files is: if it's a file, then is plural; if it's the module class name, then is singular.
 
 Folder | Description
@@ -152,7 +152,7 @@ _(Ordered by importance.)_
 
 > Every line of code should appear to be written by a single person, no matter the number of contributors.
 
-GSS follows [mdo's Code Guide](http://codeguide.co/) for seamless coding experience on HTML and CSS. Regarding stylesheets, you should pay attention specially for the topics bellow.
+GSS follows [mdo's Code Guide](http://codeguide.co/) for seamless HTML/CSS coding experience. Regarding CSS, you should pay attention specially for the topics bellow.
 
 #### Syntax
 - Use soft tabs with two spaces — they're the only way to guarantee code renders the same in any environment.
