@@ -4,29 +4,23 @@ GSS is a module-based approach to CSS structuration with a human-friendly syntax
 
 It's heavily inspired by a lot of great ideas, like Atomic Design, SMACSS, mdo's Code Guide, Semantic UI and so on.
 
-### Features
+## Features
+
 - Modular styling.
 - Simplicity and readability above everything.
 - Easy recognition and debug of which module you are working on.
 - Seamless maintainability of code.
 - Simple structure that leverages the power of cascading stylesheet.
 
-### Naming principles
-- Modules are only named by its purpose (e.g., `button`).
-- Attributes of a module are named by either its purpose, appearance, behavior or dependence. They must be prefixed with a verb or a preposition (e.g., `is-primary`, `is-large`).
-- Use of `lisp-case` for naming classes. All lowercase.
-- Words separated by a single hyphen (never double).
-- Modules and attributes are separated by a space in the HTML or `.` in the CSS or nested in SCSS/LESS.
-- Different modules in a same HTML element are separated by a slash (e.g., `<span class="icon of-submit / motion of-submit>`) for visual convenience.
-
 ## How it works
+
 The stylesheets are composed of:
 - **Independent modules** of some piece of UI.
 - **Combinable attributes**, prefixed by a verb/preposition.
 
 A **module** can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid or a card for example). They are named by its _purpose_. An **attribute** is a part and/or an extension of the parent module (or a module of a module) — and can only exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its _purpose_, _appearance_, _behavior_ or _dependence_.
 
-### Example
+### A simple example
 ![Example](https://dl.dropboxusercontent.com/u/13659411/Guava/gssexample.svg)
 
 #### The markup
@@ -44,7 +38,7 @@ button, .button {                         /* Module */
   display: inline-block;
   padding: .2rem .5rem;
   color: black;
-  font-weight: 1rem;
+  font-size: 1rem;
   line-height: 1rem;
   text-align: center;
   white-space: nowrap;
@@ -55,6 +49,7 @@ button, .button {                         /* Module */
 
 .button.is-primary {                      /* Attribute */
   color: #f6494d;
+  font-weight: bold;
   letter-spacing: .1rem;
   text-transform: uppercase;
   border-color: #f6494d;
@@ -84,9 +79,18 @@ P.S.: A module can either contain base styles (that are combined with its attrib
 
 P.S.2: The modules are created _by demand_ of developers and designers (except the [core modules](https://github.com/guava/gss#the-core)).
 
-## Modules and stylesheets structure
+## Naming principles
 
-### The core
+- Modules are only named by its purpose (e.g., `button`).
+- Attributes of a module are named by either its purpose, appearance, behavior or dependence. They must be prefixed with a verb or a preposition (e.g., `is-primary`, `is-large`).
+- Use of `lisp-case` for naming classes. All lowercase.
+- Words separated by a single hyphen (never double).
+- Modules and attributes are separated by a space in the HTML or `.` in the CSS or nested in SCSS/LESS.
+- Different modules in a same HTML element are separated by a slash (e.g., `<span class="icon of-submit / motion of-submit>`) for visual convenience.
+
+## Structure
+
+#### Core modules
 Some modules are more important than others, composing the most basic building units. Usually, they cascade throughout the stylesheet. GSS calls them of core modules.
 
 Core modules | Description
@@ -99,7 +103,7 @@ Core modules | Description
 
 _(Ordered by importance.)_
 
-### Other modules
+#### Other modules
 The table below shows _examples_ of possible modules. It's up to developers and designers decide which modules can fit in your project — or even create new different modules.
 
 Examples of modules | Description
@@ -125,13 +129,13 @@ Examples of modules | Description
 
 _(Examples of modules.)_
 
-### Specific page styles
+#### Specific page styles
 Sometimes, it's hard to map some user interface components (or aspects) to modules. Also, there may be specific styles that make more sense belonging to a page rather than a building block. For that, there is the `pages/`  folder. These styles classes must be prefixed with `.page-`.
 
-### Vendors
+#### Dealing with vendors
 The open source world is vast and vibrant. In order to deal with these huge amount of awesomeness, it's prudent to specify what you relies on and overwrites over. GSS does this by separating the overwrites into its own folder and files. These style classes must be prefixed with `.vendor-`.
 
-### File structure
+#### Placing
 The naming scheme of classes and files is: if it's a file, then is plural; if it's the module class name, then is singular.
 
 Folder | Description
@@ -150,7 +154,7 @@ _(Ordered by importance.)_
 
 GSS follows [mdo's Code Guide](http://codeguide.co/) for seamless coding experience on HTML and CSS. Regarding stylesheets, you should pay attention specially for the topics bellow.
 
-### Syntax
+#### Syntax
 - Use soft tabs with two spaces — they're the only way to guarantee code renders the same in any environment.
 - When grouping selectors, keep individual selectors to a single line.
 - Include one space before the opening brace of declaration blocks for legibility.
@@ -168,14 +172,14 @@ GSS follows [mdo's Code Guide](http://codeguide.co/) for seamless coding experie
 
 _(From [Code Guide](http://codeguide.co/).)_
 
-### Order of styles inside a module
+#### Order of styles inside a module
 1. Variables
 2. Mixins
 3. Basic HTML element — `input[type="password"] {}`
 4. Module class — `.input {}`
 5. Module attribute class — `.input.is-large {}`
 
-### Order of properties inside a style
+#### Order of properties inside a style
 1. Positioning — `position`,  `left`, …
 2. Box model — `display`,  `float`,  `width`,  `padding`,  `margin` …
 3. Typographic — `font`,  `text-align`, …
@@ -184,19 +188,19 @@ _(From [Code Guide](http://codeguide.co/).)_
 
 _(From [Code Guide](http://codeguide.co/).)_
 
-### Single declarations
+#### Single declarations
 In instances where a rule set includes _only one declaration_, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines. _(From [Code Guide](http://codeguide.co/).)_
 
-### Comments
+#### Comments
 Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name. Be sure to write in complete sentences for larger comments and succinct phrases for general notes. _(From [Code Guide](http://codeguide.co/).)_
 
-### Linter
+#### Linter
 Use [SCSS Lint](https://github.com/brigade/scss-lint) to help you be on the right track. Install its [plugin](https://github.com/brigade/scss-lint#editor-integration) on your editor of choice. Also, use the [GSS configuration file](https://gist.github.com/sergiofontes/47ec6addc1768855b3e7b2aba992f96f) to remain compliant with these standards.
 
-### Autoprefixer
+#### Autoprefixer
 Use [Autoprefixer](https://github.com/postcss/autoprefixer) to deal with CSS vendor prefixes. In other words, you must not manually write these annoying prefixes — let the PostCSS' [Autoprefixer](https://github.com/postcss/autoprefixer) do it for you. Doing this, you keep the code clean and also improve maintainability, since you can easily configure what browsers the project should support.
 
-### Git
+#### Git
 Keep an eye on Guava's [Git standards](https://github.com/guava/standards/blob/master/git.md) and on the following naming convention for branches.
 * Use hyphen to separate words (eg.: `name-of-branch`).
 * Use slash to separate branch prefix from branch name (eg.: `prefix/name-of-branch`).
