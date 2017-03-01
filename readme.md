@@ -4,9 +4,9 @@ GSS is a module-based approach to CSS structuration with a human-friendly syntax
 
 The main idea is to divide the UI into **modules**, which contains **attributes**, that can be _combined_ to compose variations of the module. All of that alongside a more natural readability of the classes. This way, it’s easy to understand, develop and maintain stylesheets, from small to big projects.
 
-It's heavily inspired by a lot of great ideas, like Atomic Design, SMACSS, mdo's Code Guide, Semantic UI and so on.
+It's heavily inspired by a lot of great ideas, like [Atomic Design](http://atomicdesign.bradfrost.com/), [SMACSS](https://smacss.com/), [mdo's Code Guide](http://codeguide.co/), [Semantic UI](http://semantic-ui.com/) and so on.
 
-## Features
+## What it feats
 
 - Modular styling.
 - Simplicity and readability above everything.
@@ -20,12 +20,14 @@ The stylesheets are composed of:
 - **Independent modules** of some piece of UI.
 - **Combinable attributes**, prefixed by a verb/preposition.
 
-A **module** can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid or a card for example). They are named by its _purpose_. An **attribute** is a part and/or an extension of the parent module (or a module of a module) — and usually exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its _purpose_, _appearance_, _behavior_ or _dependence_.
+A **module** can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid or a card for example). They are named by its _purpose_. It is also the file name where is all module's stylesheet.
 
-### One simple example
+An **attribute** is a part and/or an extension of the parent module (or a module of a module) — and usually exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its _purpose_, _appearance_, _behavior_ or _dependence_.
+
+### Let's take a look at the code
 ![Example](https://dl.dropboxusercontent.com/u/13659411/Guava/gssexample.svg)
 
-#### Markup
+#### The markup
 _Note that the combination of modules and attributes brings an intuitive understanding of how this UI piece looks like._
 ```html
 <button class="button is-primary is-large has-icon">
@@ -81,7 +83,7 @@ P.S.: A module can either contain base styles (that are combined with its attrib
 
 P.S.2: The modules are created _by demand_ of developers and designers (except the [core modules](https://github.com/guava/gss#the-core)).
 
-## Naming principles
+## It's naming principles
 
 - Modules are only named by its purpose (e.g., `button`).
 - Attributes of a module are named by either its purpose, appearance, behavior or dependence. They must be prefixed with a verb or a preposition (e.g., `is-primary`, `is-large`).
@@ -90,7 +92,7 @@ P.S.2: The modules are created _by demand_ of developers and designers (except t
 - Modules and attributes are separated by a space in the HTML or `.` in the CSS or nested in SCSS/LESS.
 - Different modules in a same HTML element are separated by a slash (e.g., `<span class="icon of-submit / motion of-submit>`) for visual convenience.
 
-## Structure
+## How everything is structured
 
 #### Core modules
 Some modules are more important than others, composing the most basic building units. Usually, they cascade throughout the stylesheet. GSS calls them of core modules.
@@ -150,7 +152,7 @@ Folder | Description
 
 _(Ordered by importance.)_
 
-## Code guidelines
+## CSS code guidelines
 
 > Every line of code should appear to be written by a single person, no matter the number of contributors.
 
