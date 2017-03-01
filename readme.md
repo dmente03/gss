@@ -83,7 +83,7 @@ P.S.: A module can either contain base styles (that are combined with its attrib
 
 P.S.2: The modules are created _by demand_ of developers and designers (except the [core modules](https://github.com/guava/gss#the-core)).
 
-## It's naming principles
+## Its naming principles
 
 - Modules are only named by its purpose (e.g., `button`).
 - Attributes of a module are named by either its purpose, appearance, behavior or dependence. They must be prefixed with a verb or a preposition (e.g., `is-primary`, `is-large`).
