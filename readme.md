@@ -36,29 +36,254 @@ Defaults and styles of base HTML and UI elements. They are the most basic styles
 - Typography
 - Utils
 
-_[Example of article]_
+```html
+<article class="article is-post">
+  <h1>…</h1>
+  <p class="is-lead">…</p>
+  <p>…</p>
+  <blockquote>
+    …
+    <cite>…</cite>
+  </blockquote>
+</article>
+```
 
-_[Common questions]_
+_Base (Typography)_
+```css
+h1 {…}
+
+p {
+  …
+  &.is-lead {…}
+}
+
+blockquote {
+  …
+  cite {…}
+}
+```
 
 ### Modules
 Independent, reusable and functional UI components that composes the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only name the parent.
 
-_[Examples of card, dropdown, top nav, grid]_
+```html
+<article class="card is-employee">
+  <header>
+    <img src="" alt="Sérgio photo">
+  </header>
+  <section>
+    <h3>Sérgio Fontes</h3>
+    <p>Designer</p>
+    <small>Member since Oct 2013</small>
+  </section>
+</article>
+```
 
-_[Common questions]_
+_Base (Typography)_
+```css
+h3 {…}
+p {…}
+small {…}
+```
+
+_Module (Cards)_
+```css
+.card.is-employee {
+  …
+  > header {…}
+  > section {…}
+  img {…}
+}
+```
+
+```html
+<div class="dropdown is-centered has-icons">
+  <ul>
+    <li>
+      <a href="#">
+        <span class="icon of-profile" role="presentation"></span>
+        Profile
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span class="icon of-configuration" role="presentation"></span>
+        Configuration
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span class="icon of-logout" role="presentation"></span>
+        Log out
+      </a>
+    </li>
+  </ul>
+</div>
+```
+
+_Module (Dropdowns)_
+```css
+.dropdown.is-centered {
+  …
+  ul {…}
+  li {…}
+  a {…}
+  &.has-icon {
+    .icon {…}
+  }
+}
+```
+
+_Module (Icons)_
+```css
+.icon {
+  &.of-profile {…}
+  &.of-configuration {…}
+  &.of-logout {…}
+}
+```
+
+```html
+<nav class="menu is-top-nav is-fixed">
+  <img class="logo of-guava is-small" src="" alt="Guava logo">
+  <ul>
+    <li class="is-active">
+      <a href="#">
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        People
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        Project
+      </a>
+    </li>
+  </ul>
+  <input type="search" placeholder="Search for something...">
+</nav>
+```
+
+_Base (Forms)_
+```css
+input[type="search"] {…}
+```
+
+_Module (Menus)_
+```css
+.menu.is-top-nav {
+  …
+  ul {…}
+  li {…}
+  a {…}
+  input[type="search"] {…}
+  .is-active a {…}
+  .logo.of-guava {…}
+}
+
+_Module (Logos)_
+```css
+.logo.of-guava {
+  …
+  &.is-small {…}
+}
+```
+
+```html
+<div class="grid is-container">
+  <div class="grid is-row">
+    <div class="grid is-column of-quarter">…</div>
+    <div class="grid is-column of-quarter">…</div>
+    <div class="grid is-column of-quarter">…</div>
+    <div class="grid is-column of-quarter">…</div>
+  </div>
+  <div class="grid is-row">
+    <div class="grid is-column of-third">…</div>
+    <div class="grid is-column of-third">…</div>
+    <div class="grid is-column of-third">…</div>
+  </div>
+  <div class="grid is-row">
+    <div class="grid is-column of-half">…</div>
+    <div class="grid is-column of-half">…</div>
+  </div>
+</div>
+```
+
+_Module (Grid)_
+```css
+.grid.is-container {…}
+.grid.is-row {…}
+.grid.is-column {
+  …
+  &.of-half {…}
+  &.of-third {…}
+  &.of-quarter {…}
+}
+```
 
 ### Attributes
 UI characteristics classes. They are prefixed by a verb/preposition; and can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
 
-_[Example of login card]_
+```html
+<article class="card of-login">
+  <h3>Login</h3>
+  <input class="is-large" type="email" placeholder="Type your email">
+  <input class="is-large" type="password" placeholder="And your password">
+  <button class="of-submit has-icon">
+    Log me in
+    <span class="icon of-submit / motion is-submiting" role="presentation"></span>
+  </button>
+</article>
+```
 
-_[Class x Category]_
-- is-submit (purpose)
-- is-large (appearance)
-- is-submiting (behavior)
-- has-icon (dependence)
-- of-submit (relationship)
-- at-login (context)
+_Base (Forms)_
+```css
+input {
+  …
+  &.is-large {…}
+}
+
+input[type="email"] {…}
+input[type="password"] {…}
+```
+
+Module (Cards)
+```css
+.card.is-login {
+  …
+  > h3 {…}
+  > input {…}
+  button {…}
+}
+```
+
+_Module (Icons)_
+```css
+.icon {
+  …
+  &.of-submit {…}
+}
+```
+
+_Module (Motion)_
+```css
+.motion {
+  …
+  &.is-submiting {…}
+}
+```
+
+Class | Category
+----- | --------
+`.of-login` | _Relationship_
+`.is-submit` | _Purpose_
+`.is-large` | _Appearance_
+`.has-icon` | _Dependence_
+`.is-submiting` | _Behavior_
+`.at-login` | _Context_
 
 [Common questions]
 
@@ -132,8 +357,6 @@ Folder | Description
 
 > Every line of code should appear to be written by a single person, no matter the number of contributors.
 
-GSS follows [mdo's Code Guide](http://codeguide.co/) for seamless HTML/CSS coding experience. Regarding CSS, you should pay attention specially for the topics bellow.
-
 ### Syntax
 - Use soft tabs with two spaces — they're the only way to guarantee code renders the same in any environment.
 - When grouping selectors, keep individual selectors to a single line.
@@ -170,9 +393,20 @@ _(From [Code Guide](http://codeguide.co/).)_
 
 ### Single declarations
 In instances where a rule set includes _only one declaration_, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines. _(From [Code Guide](http://codeguide.co/).)_
+```css
+.icon           { background-position: 0 0; }
+.icon-home      { background-position: 0 -20px; }
+.icon-account   { background-position: 0 -40px; }
+```
 
 ### Comments
 Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name. Be sure to write in complete sentences for larger comments and succinct phrases for general notes. _(From [Code Guide](http://codeguide.co/).)_
+```css
+/* Wrapping element for .modal-title and .modal-close */
+.modal-header {
+  …
+}
+```
 
 ### Linter
 Use [SCSS Lint](https://github.com/brigade/scss-lint) to help you be on the right track. Install its [plugin](https://github.com/brigade/scss-lint#editor-integration) on your editor of choice. Also, use [this GSS configuration file](https://gist.github.com/sergiofontes/47ec6addc1768855b3e7b2aba992f96f) to remain compliant with these standards.
