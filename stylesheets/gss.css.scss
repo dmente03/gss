@@ -10,30 +10,31 @@
 // Vendor Overwrites ............ Third-party overwrites //
 @import "vendors/overwrites/vendor-name";
 
-// Core modules .......... Shared styles between modules //
-@import "modules/core/utils";
-@import "modules/core/colors";
-@import "modules/core/type";
-@import "modules/core/grid";
-@import "modules/core/attributes";
+// Base styles ......... Defaults and base HTML elements //
+@import "base/utils";
+@import "base/colors";
+@import "base/typography";
+@import "base/forms";
+@import "base/tables";
 
-// Modules ...................... User interface modules //
-@import "modules/articles";
+// Modules ................... Independent UI components //
+@import "modules/grid";
+//
 @import "modules/alerts";
-@import "modules/backgrounds";
-@import "modules/buttons";
+@import "modules/articles";
+@import "modules/cards";
+@import "modules/dropdowns";
 @import "modules/figures";
 @import "modules/footers";
-@import "modules/forms";
-@import "modules/groups";
+@import "modules/graphs";
 @import "modules/headers";
 @import "modules/icons";
-@import "modules/inputs";
+@import "modules/logos";
 @import "modules/menus";
 @import "modules/motion";
 @import "modules/overlays";
 @import "modules/sections";
-@import "modules/tables";
+@import "modules/sidebars";
 
 // Pages ......................... Specific page styling //
 @import "pages/page-name";
