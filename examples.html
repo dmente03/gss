@@ -1,3 +1,29 @@
+<article class="article is-post">
+  <h1>…</h1>
+  <p class="is-lead">…</p>
+  <p>…</p>
+  <blockquote>
+    …
+    <cite>…</cite>
+  </blockquote>
+</article>
+
+<!--
+Base / Typography
+—————————————————
+h1 {…}
+
+p {
+  …
+  &.is-lead {…}
+}
+
+blockquote {
+  …
+  cite {…}
+}
+-->
+
 <article class="card of-employee">
   <header>
     <img src="" alt="Sérgio photo">
@@ -105,8 +131,8 @@ Module / Menus
   ul {…}
   li {…}
   a {…}
-  .is-active a {…}
   input[type="search"] {…}
+  .is-active a {…}
   .logo.of-guava {…}
 }
 
@@ -120,19 +146,19 @@ Module / Logos
 
 <div class="grid is-container">
   <div class="grid is-row">
-    <div class="grid is-column of-quarter"></div>
-    <div class="grid is-column of-quarter"></div>
-    <div class="grid is-column of-quarter"></div>
-    <div class="grid is-column of-quarter"></div>
+    <div class="grid is-column of-quarter">…</div>
+    <div class="grid is-column of-quarter">…</div>
+    <div class="grid is-column of-quarter">…</div>
+    <div class="grid is-column of-quarter">…</div>
   </div>
   <div class="grid is-row">
-    <div class="grid is-column of-third"></div>
-    <div class="grid is-column of-third"></div>
-    <div class="grid is-column of-third"></div>
+    <div class="grid is-column of-third">…</div>
+    <div class="grid is-column of-third">…</div>
+    <div class="grid is-column of-third">…</div>
   </div>
   <div class="grid is-row">
-    <div class="grid is-column of-half"></div>
-    <div class="grid is-column of-half"></div>
+    <div class="grid is-column of-half">…</div>
+    <div class="grid is-column of-half">…</div>
   </div>
 </div>
 
@@ -146,5 +172,78 @@ Module / Grid
   &.of-half {…}
   &.of-third {…}
   &.of-quarter {…}
+}
+-->
+
+<article class="card of-login">
+  <h3>Login</h3>
+  <input class="is-large" type="email" placeholder="Type your email">
+  <input class="is-large" type="password" placeholder="And your password">
+  <button class="of-submit has-icon">
+    Log me in
+    <span class="icon of-submit / motion is-submiting" role="presentation"></span>
+  </button>
+</article>
+
+<!--
+Base / Forms
+————————————
+input {
+  …
+  &.is-large {…}
+}
+
+input[type="email"] {…}
+input[type="password"] {…}
+
+Module / Cards
+——————————————
+.card.of-login {
+  …
+  > h3 {…}
+  > input {…}
+  button {…}
+}
+
+Module / Icons
+——————————————
+.icon {
+  …
+  &.of-submit {…}
+}
+
+Module / Motion
+———————————————
+.motion {
+  …
+  &.is-submiting {…}
+}
+-->
+
+<body class="page-color">
+  <article class="article is-post">
+    <h1>…</h1>
+    <p class="is-lead">…</p>
+    <p>…</p>
+    <blockquote>
+      …
+      <cite>…</cite>
+    </blockquote>
+  </article>
+</body>
+
+<!--
+Page / Color
+————————————
+.page-color {
+  …
+  .article.is-post {
+    h1 {…}
+    p {…}
+    blockquote {
+      …
+      cite {…}
+    }
+  }
 }
 -->

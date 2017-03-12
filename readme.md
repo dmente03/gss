@@ -12,9 +12,9 @@ It's heavily inspired by a lot of great ideas, like [Atomic Design](http://atomi
 - Seamless maintainability of code.
 - Structure that leverages the power of cascading stylesheet.
 
-## How it works
-
 [Intro]
+
+## How it works
 
 The stylesheets are categorized in three types:
 
@@ -22,52 +22,52 @@ The stylesheets are categorized in three types:
 2. **Modules** — independent, reusable and functional UI components. (`.card {…}`).
 3. **Page** — context and page-specific styles (`.page-login {…}`).
 
-Every stylesheet category, from Base to Page, contains **Attribute** classes that defines UI characteristics — which is named in a more natural and contextual way (`p.is-lead {…}`, `.icon.of-search`).
+Every stylesheet category, from Base to Page, contains **Attribute** classes that defines UI characteristics — which is named in a more natural and contextual way (`p.is-lead {…}`, `.icon.of-search {…}`).
 
 [Examples]
 
 ## Going deeper
 
-#### Base
-Defaults and styles of base HTML and UI elements. They are the most basic styles of every project.
-
-[Examples]
+### Base
+Defaults and styles of base HTML and UI elements. They are the most basic styles of every project and are categorized in:
 - Colors
 - Forms
 - Tables
 - Typography
 - Utils
 
-[Common questions]
+_[Example of article]_
 
-#### Modules
+_[Common questions]_
+
+### Modules
 Independent, reusable and functional UI components that composes the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only name the parent.
 
-[Examples]
-- Card
-- Menu nav bar
-- Graph
-- Sidebar
-- Dropdown
-- Icons
+_[Examples of card, dropdown, top nav, grid]_
 
-[Common questions]
+_[Common questions]_
 
-#### Attributes
+### Attributes
 UI characteristics classes. They are prefixed by a verb/preposition; and can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
 
-[Examples]
+_[Example of login card]_
+
+_[Class x Category]_
 - is-submit (purpose)
 - is-large (appearance)
 - is-submiting (behavior)
 - has-icon (dependence)
-- of-search (relationship)
+- of-submit (relationship)
 - at-login (context)
 
 [Common questions]
 
-#### Pages
+### Pages
 Context and page-specific styles that can’t be reused or alocated within a Module. These styles classes must be prefixed with `.page-`.
+
+_[Example of article with themes]_
+
+[Common questions]
 
 #### Naming principles
 - Use of `lisp-case` for naming classes. All lowercase.
@@ -122,11 +122,11 @@ Folder | Description
 `vendors/` | Third-party software
 `vendors/overwrites/` | Third-party overwrites
 
-###
+###  
 
 ---
 
-###
+###  
 
 ## Code style guidelines
 
