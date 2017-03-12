@@ -1,158 +1,122 @@
 ![Logo of Guava Stylesheet Standards](https://dl.dropboxusercontent.com/u/13659411/Guava/gss.svg)
 
-GSS is a module-based approach to CSS structuration with a human-friendly syntax. 
-
-The main idea is to divide the UI into **modules**, which contains **attributes**, that can be _combined_ to compose variations of the module. All of that alongside a more natural readability of the classes. This way, it’s easy to understand, develop and maintain stylesheets, from small to big projects.
+GSS is a module-based methodology to CSS structuration with a human-friendly syntax. It aims to facilitate the process of understanding, naming and organizing CSS. This way, it’s easier to develop and maintain stylesheets, from small to big projects.
 
 It's heavily inspired by a lot of great ideas, like [Atomic Design](http://atomicdesign.bradfrost.com/), [SMACSS](https://smacss.com/), [mdo's Code Guide](http://codeguide.co/), [Semantic UI](http://semantic-ui.com/) and so on.
 
-## What it feats
+## What GSS feats
 
 - Modular styling.
 - Simplicity and readability above everything.
 - Easy recognition and debug of which module you are working on.
 - Seamless maintainability of code.
-- Simple structure that leverages the power of cascading stylesheet.
+- Structure that leverages the power of cascading stylesheet.
 
 ## How it works
+[Intro]
 
-The stylesheets are composed of:
-- **Independent modules** of some piece of UI.
-- **Combinable attributes**, prefixed by a verb/preposition.
+The stylesheets are categorized in three types:
+1. **Base** — defaults and styles of base HTML and UI elements (`p {…}`).
+2. **Modules** — independent, reusable and functional UI components. (`.card {…}`).
+3. **Page** — context and page-specific styles (`.page-login {…}`).
 
-A **module** can range from a basic piece of a standalone HTML element (like a simple button), to a more complex user interface system (a grid or a card for example). They are named by its _purpose_. It is also the file name where is all module's stylesheet.
+Every stylesheet category, from Base to Page, contains **Attribute** classes that defines UI characteristics — which is named in a more natural and contextual way (`p.is-lead {…}`, `.icon.of-search`).
 
-An **attribute** is a part and/or an extension of the parent module (or a module of a module) — and usually exist within them. They are prefixed with a verb or a preposition (`has-`, `is-`, `at-`, `on-`, `of-` etc) and are named by either its _purpose_, _appearance_, _behavior_ or _dependence_.
+[Examples]
 
-### Let's take a look at the code
-![Example](https://dl.dropboxusercontent.com/u/13659411/Guava/gssexample.svg)
+## Going deeper
 
-#### The markup
-_Note that the combination of modules and attributes brings an intuitive understanding of how this UI piece looks like._
-```html
-<button class="button is-primary is-large has-icon">
-  Submit
-  <span class="icon of-submit"></span>
-</button>
-```
+#### Base
+Defaults and styles of base HTML and UI elements. They are the most basic styles of every project.
 
-#### Button's module stylesheet
-```css
-button, .button {                         /* Module */
-  display: inline-block;
-  padding: .2rem .5rem;
-  color: black;
-  font-size: 1rem;
-  line-height: 1rem;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  appearance: none;
-  border: 2px solid black;
-}
+[Examples]
+- Colors
+- Forms
+- Tables
+- Typography
+- Utils
 
-.button.is-primary {                      /* Attribute */
-  color: #f6494d;
-  font-weight: bold;
-  letter-spacing: .1rem;
-  text-transform: uppercase;
-  border-color: #f6494d;
-}
+#### Modules
+Independent, reusable and functional UI components that composes the bulk of any project. Sometimes, a Module can sit within other Module.
 
-.button.is-large { padding: .5rem 3rem; } /* Attribute */
-.button.has-icon { position: relative; }  /* Attribute */
-```
+[Examples]
+- Card
+- Menu nav bar
+- Graph
+- Sidebar
+- Dropdown
+- Icons
 
-#### Icon's module stylesheet
-```css
-.icon {                                   /* Module */
-  position: absolute;
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-}
+#### Attributes
+UI characteristics classes. They are prefixed by a verb/preposition; and can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
 
-.icon.of-submit {                         /* Attribute */
-  top: .5rem;
-  right: 1rem;
-  background-image: url("...");  
-}
-```
+[Examples]
+- is-submit (purpose)
+- is-large (appearance)
+- is-submiting (behavior)
+- has-icon (dependence)
+- of-search (relationship)
+- at-login (context)
 
-P.S.: A module can either contain base styles (that are combined with its attributes, like the `.button` example from above) or not (in this case, by being just an remark of the current module file).
+#### Pages
+Context and page-specific styles that can’t be reused or alocated within a Module. These styles classes must be prefixed with `.page-`.
 
-P.S.2: The modules are created _by demand_ of developers and designers (except the [core modules](https://github.com/guava/gss#the-core)).
-
-## Its naming principles
-
-- Modules are only named by its purpose (e.g., `button`).
-- Attributes of a module are named by either its purpose, appearance, behavior or dependence. They must be prefixed with a verb or a preposition (e.g., `is-primary`, `is-large`).
+#### Naming principles
 - Use of `lisp-case` for naming classes. All lowercase.
 - Words separated by a single hyphen (never double).
-- Modules and attributes are separated by a space in the HTML or `.` in the CSS or nested in SCSS/LESS.
-- Different modules in a same HTML element are separated by a slash (e.g., `<span class="icon of-submit / motion of-submit>`) for visual convenience.
+- Modules and Attributes are separated with a space in the HTML markup.
+- Different Modules in a same HTML element are separated by a slash (e.g., `<span class="icon of-submit / motion of-submit>`) for visual convenience.
 
-## How everything is structured
+## Everything in its right place
 
-#### Core modules
-Some modules are more important than others, composing the most basic building units. Usually, they cascade throughout the stylesheet. GSS calls them of core modules.
-
-Core modules | Description
+#### Base files
+Base styles | Description
 ------------ | ---------------
-`core/utils.scss` | Functions and uncategorized mixins
-`core/colors.scss` | Colors, sorted by name and semantic purpose (e.g., `blue` and `primary`)
-`core/type.scss` | Typographic modular scale and text elements (`h1`,  `p`, etc)
-`core/grid.scss` | Dimensions, rows, containers, alignments, columns, ordering, etc
-`core/attributes.scss` | Shared attributes between different modules
+`base/colors` | Colors, sorted by name and semantic purpose (e.g., `blue` and `primary`)
+`base/forms` | Inputs, fieldsets, buttons, etc
+`base/tables` | Table header, body and footer layouts; cells, rows and columns
+`base/typography` | Headers, paragraphs, links, lists, labels, etc
+`base/utils` | Functions, placeholders and uncategorized mixins (for Sass and LESS)
 
-_(Ordered by importance.)_
-
-#### Other modules
-The table below shows _examples_ of possible modules. It's up to developers and designers decide which modules can fit in your project — or even create new different modules.
-
-Examples of modules | Description
+#### Modules files (examples)
+Examples of Modules | Description
 ------------------- | ---------------
-`articles.scss` | Articles layouts
-`alerts.scss` | Alerts and notifications
-`backgrounds.scss` | Textures, patterns and other things
-`buttons.scss` | Buttons and its variations
-`figures.scss` | Images, illustrations, infographics
-`footers.scss` | Footers layouts
-`forms.scss` | Inputs & fieldsets layouts
-`groups.scss` | Groups of standalone elements, like button, inputs, figures, icons, etc
-`headers.scss` | Headers layouts
-`icons.scss` | Iconography
-`inputs.scss` | Inputs and its variations
-`logos.scss` | Logos and its variations
-`menus.scss` | Menu layouts
-`motion.scss` | Keyframes, triggers and special mixins for UI animation
-`overlays.scss` | Modals, popovers and other things that overlays basic UI
-`sections.scss` | Special sections layouts
-`tables.scss` | Tables header, body and footer layouts, cells, rows and columns
+`alerts` | Alerts and notifications
+`articles` | Articles layouts
+`cards` | Content displayed in a manner similar to a playing card
+`dropdowns` | Allows a user to select a value from a series of options
+`figures` | Images, illustrations, infographics
+`footers` | Footers layouts
+`graphs` | Graphic visualizations for dynamic and interactive data
+`grid` | Dimensions, rows, containers, alignments, columns, ordering, etc
+`headers` | Headers layouts
+`icons` | Iconography
+`logos` | Logos and its variations
+`menus` | Menu layouts
+`motion` | Keyframes, triggers and special mixins for UI animation
+`overlays` | Modals, popovers and other things that overlays basic UI
+`sections` | Special sections layouts
+`sidebars` | Asides and secondary pieces of content
 `…` | …
-
-_(Examples of modules.)_
-
-#### Specific page stylesheets
-Sometimes, it's hard to map some user interface components (or aspects) to modules. Also, there may be specific styles that make more sense belonging to a page rather than a building block. For that, there is the `pages/`  folder. These styles classes must be prefixed with `.page-`.
 
 #### Dealing with vendors
 The open source world is vast and vibrant. In order to deal with these huge amount of awesomeness, it's prudent to specify what you relies on and overwrites over. GSS does this by separating the overwrites into its own folder and files. These style classes must be prefixed with `.vendor-`.
 
-#### Everything in its right place
-The naming scheme of classes and files is: if it's a file, then is plural; if it's the module class name, then is singular.
+#### Naming files and classes
+The naming scheme of classes and files is: if it's a file, then is plural; if it's a Base/Module class name, then is singular.
 
+#### Folders
 Folder | Description
 ------ | -----------
+`base/` | Defaults and base HTML elements
+`modules/` | Independent, reusable and functional UI components
+`pages/` | Specific page styles
 `vendors/` | Third-party software
 `vendors/overwrites/` | Third-party overwrites
-`modules/core/` | Shared styles between modules
-`modules/` | User interface modules
-`pages/` | Specific page styles
 
-_(Ordered by importance.)_
+---
 
-## CSS code guidelines
+## Code style guidelines
 
 > Every line of code should appear to be written by a single person, no matter the number of contributors.
 
@@ -199,7 +163,7 @@ In instances where a rule set includes _only one declaration_, consider removing
 Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name. Be sure to write in complete sentences for larger comments and succinct phrases for general notes. _(From [Code Guide](http://codeguide.co/).)_
 
 #### Linter
-Use [SCSS Lint](https://github.com/brigade/scss-lint) to help you be on the right track. Install its [plugin](https://github.com/brigade/scss-lint#editor-integration) on your editor of choice. Also, use the [GSS configuration file](https://gist.github.com/sergiofontes/47ec6addc1768855b3e7b2aba992f96f) to remain compliant with these standards.
+Use [SCSS Lint](https://github.com/brigade/scss-lint) to help you be on the right track. Install its [plugin](https://github.com/brigade/scss-lint#editor-integration) on your editor of choice. Also, use [this GSS configuration file](https://gist.github.com/sergiofontes/47ec6addc1768855b3e7b2aba992f96f) to remain compliant with these standards.
 
 #### Autoprefixer
 Use [Autoprefixer](https://github.com/postcss/autoprefixer) to deal with CSS vendor prefixes. In other words, you must not manually write these annoying prefixes — let the PostCSS' [Autoprefixer](https://github.com/postcss/autoprefixer) do it for you. Doing this, you keep the code clean and also improve maintainability, since you can easily configure what browsers the project should support.
@@ -215,8 +179,8 @@ Keep an eye on Guava's [Git standards](https://github.com/guava/standards/blob/m
 
 ## Further reading
 
-- [Atomic Design Methodology](http://atomicdesign.bradfrost.com/chapter-2/), by Brad Frost
-- [Learning from Lego: A Step Forward in Modular Web Design](http://alistapart.com/article/learning-from-lego-a-step-forward-in-modular-web-design), by Samantha Zhang
-- [Depth of Applicability](https://smacss.com/book/applicability), by Jonathan Snook
 - [Code Guide](http://codeguide.co/), by mdo
+- [Atomic Design Methodology](http://atomicdesign.bradfrost.com/chapter-2/), by Brad Frost
+- [Depth of Applicability](https://smacss.com/book/applicability), by Jonathan Snook
+- [Learning from Lego: A Step Forward in Modular Web Design](http://alistapart.com/article/learning-from-lego-a-step-forward-in-modular-web-design), by Samantha Zhang
 - [BEM sucks](https://twitter.com/samuelfine/status/575646836251344897), by Samuel Fine
