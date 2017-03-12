@@ -1,0 +1,150 @@
+<article class="card of-employee">
+  <header>
+    <img src="" alt="Sérgio photo">
+  </header>
+  <section>
+    <h3>Sérgio Fontes</h3>
+    <p>Designer</p>
+    <small>Member since Oct 2013</small>
+  </section>
+</article>
+
+<!--
+Base / Typography
+—————————————————
+h3 {…}
+p {…}
+small {…}
+
+Module / Cards
+——————————————
+.card.of-employee {
+  …
+  > header {…}
+  > section {…}
+  img {…}
+}
+-->
+
+<div class="dropdown is-centered has-icons">
+  <ul>
+    <li>
+      <a href="#">
+        <span class="icon of-profile" role="presentation"></span>
+        Profile
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span class="icon of-configuration" role="presentation"></span>
+        Configuration
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span class="icon of-logout" role="presentation"></span>
+        Log out
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!--
+Module / Dropdowns
+——————————————————
+.dropdown.is-centered {
+  …
+  ul {…}
+  li {…}
+  a {…}
+  &.has-icon {
+    .icon {…}
+  }
+}
+
+Module / Icons
+——————————————
+.icon {
+  &.of-profile {…}
+  &.of-configuration {…}
+  &.of-logout {…}
+}
+-->
+
+<nav class="menu is-top-nav is-fixed">
+  <img class="logo of-guava is-small" src="" alt="Guava logo">
+  <ul>
+    <li class="is-active">
+      <a href="#">
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        People
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        Project
+      </a>
+    </li>
+  </ul>
+  <input type="search" placeholder="Search for something...">
+</nav>
+
+<!--
+Base / Forms
+——————————————
+input[type="search"] {…}
+
+Module / Menus
+——————————————
+.menu.is-top-nav {
+  …
+  ul {…}
+  li {…}
+  a {…}
+  .is-active a {…}
+  input[type="search"] {…}
+  .logo.of-guava {…}
+}
+
+Module / Logos
+——————————————
+.logo.of-guava {
+  …
+  &.is-small {…}
+}
+-->
+
+<div class="grid is-container">
+  <div class="grid is-row">
+    <div class="grid is-column of-quarter"></div>
+    <div class="grid is-column of-quarter"></div>
+    <div class="grid is-column of-quarter"></div>
+    <div class="grid is-column of-quarter"></div>
+  </div>
+  <div class="grid is-row">
+    <div class="grid is-column of-third"></div>
+    <div class="grid is-column of-third"></div>
+    <div class="grid is-column of-third"></div>
+  </div>
+  <div class="grid is-row">
+    <div class="grid is-column of-half"></div>
+    <div class="grid is-column of-half"></div>
+  </div>
+</div>
+
+<!--
+Module / Grid
+—————————————
+.grid.is-container {…}
+.grid.is-row {…}
+.grid.is-column {
+  …
+  &.of-half {…}
+  &.of-third {…}
+  &.of-quarter {…}
+}
+-->
