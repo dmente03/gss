@@ -96,6 +96,8 @@ _Module (Cards)_
 }
 ```
 
+---
+
 ```html
 <div class="dropdown is-centered has-icons">
   <ul>
@@ -142,6 +144,8 @@ _Module (Icons)_
   &.of-logout {…}
 }
 ```
+
+---
 
 ```html
 <nav class="menu is-top-nav is-fixed">
@@ -191,6 +195,8 @@ _Module (Logos)_
   &.is-small {…}
 }
 ```
+
+---
 
 ```html
 <div class="grid is-container">
@@ -285,14 +291,37 @@ Class | Category
 `.is-submiting` | _Behavior_
 `.at-login` | _Context_
 
-[Common questions]
-
 ### Pages
 Context and page-specific styles that can’t be reused or alocated within a Module. These styles classes must be prefixed with `.page-`.
 
-_[Example of article with themes]_
+```html
+<body class="page-color">
+  <article class="article is-post">
+    <h1>…</h1>
+    <p class="is-lead">…</p>
+    <p>…</p>
+    <blockquote>
+      …
+      <cite>…</cite>
+    </blockquote>
+  </article>
+</body>
+```
 
-[Common questions]
+Page (Color)
+```css
+.page-color {
+  …
+  .article.is-post {
+    h1 {…}
+    p {…}
+    blockquote {
+      …
+      cite {…}
+    }
+  }
+}
+```
 
 ### Naming principles
 - Use of `lisp-case` for naming classes. All lowercase.
