@@ -4,7 +4,7 @@ GSS is a module-based methodology to CSS structuration with a human-friendly syn
 
 It's heavily inspired by a lot of great ideas, like [Atomic Design](http://atomicdesign.bradfrost.com/), [SMACSS](https://smacss.com/), [mdo's Code Guide](http://codeguide.co/), [Semantic UI](http://semantic-ui.com/) and so on.
 
-## What GSS feats
+## What it feats
 
 - Modular styling.
 - Simplicity and readability above everything.
@@ -13,9 +13,11 @@ It's heavily inspired by a lot of great ideas, like [Atomic Design](http://atomi
 - Structure that leverages the power of cascading stylesheet.
 
 ## How it works
+
 [Intro]
 
 The stylesheets are categorized in three types:
+
 1. **Base** — defaults and styles of base HTML and UI elements (`p {…}`).
 2. **Modules** — independent, reusable and functional UI components. (`.card {…}`).
 3. **Page** — context and page-specific styles (`.page-login {…}`).
@@ -36,8 +38,10 @@ Defaults and styles of base HTML and UI elements. They are the most basic styles
 - Typography
 - Utils
 
+[Common questions]
+
 #### Modules
-Independent, reusable and functional UI components that composes the bulk of any project. Sometimes, a Module can sit within other Module.
+Independent, reusable and functional UI components that composes the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only name the parent.
 
 [Examples]
 - Card
@@ -46,6 +50,8 @@ Independent, reusable and functional UI components that composes the bulk of any
 - Sidebar
 - Dropdown
 - Icons
+
+[Common questions]
 
 #### Attributes
 UI characteristics classes. They are prefixed by a verb/preposition; and can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
@@ -57,6 +63,8 @@ UI characteristics classes. They are prefixed by a verb/preposition; and can be 
 - has-icon (dependence)
 - of-search (relationship)
 - at-login (context)
+
+[Common questions]
 
 #### Pages
 Context and page-specific styles that can’t be reused or alocated within a Module. These styles classes must be prefixed with `.page-`.
@@ -71,7 +79,7 @@ Context and page-specific styles that can’t be reused or alocated within a Mod
 
 #### Base files
 Base styles | Description
------------- | ---------------
+----------- | ----------
 `base/colors` | Colors, sorted by name and semantic purpose (e.g., `blue` and `primary`)
 `base/forms` | Inputs, fieldsets, buttons, etc
 `base/tables` | Table header, body and footer layouts; cells, rows and columns
@@ -114,7 +122,11 @@ Folder | Description
 `vendors/` | Third-party software
 `vendors/overwrites/` | Third-party overwrites
 
+###
+
 ---
+
+###
 
 ## Code style guidelines
 
