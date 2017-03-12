@@ -69,7 +69,7 @@ _[Example of article with themes]_
 
 [Common questions]
 
-#### Naming principles
+### Naming principles
 - Use of `lisp-case` for naming classes. All lowercase.
 - Words separated by a single hyphen (never double).
 - Modules and Attributes are separated with a space in the HTML markup.
@@ -77,7 +77,7 @@ _[Example of article with themes]_
 
 ## Everything in its right place
 
-#### Base files
+### Base files
 Base styles | Description
 ----------- | ----------
 `base/colors` | Colors, sorted by name and semantic purpose (e.g., `blue` and `primary`)
@@ -86,7 +86,7 @@ Base styles | Description
 `base/typography` | Headers, paragraphs, links, lists, labels, etc
 `base/utils` | Functions, placeholders and uncategorized mixins (for Sass and LESS)
 
-#### Modules files (examples)
+### Modules files (examples)
 Examples of Modules | Description
 ------------------- | ---------------
 `alerts` | Alerts and notifications
@@ -107,13 +107,13 @@ Examples of Modules | Description
 `sidebars` | Asides and secondary pieces of content
 `…` | …
 
-#### Dealing with vendors
+### Dealing with vendors
 The open source world is vast and vibrant. In order to deal with these huge amount of awesomeness, it's prudent to specify what you relies on and overwrites over. GSS does this by separating the overwrites into its own folder and files. These style classes must be prefixed with `.vendor-`.
 
-#### Naming files and classes
+### Naming files and classes
 The naming scheme of classes and files is: if it's a file, then is plural; if it's a Base/Module class name, then is singular.
 
-#### Folders
+### Folders
 Folder | Description
 ------ | -----------
 `base/` | Defaults and base HTML elements
@@ -134,7 +134,7 @@ Folder | Description
 
 GSS follows [mdo's Code Guide](http://codeguide.co/) for seamless HTML/CSS coding experience. Regarding CSS, you should pay attention specially for the topics bellow.
 
-#### Syntax
+### Syntax
 - Use soft tabs with two spaces — they're the only way to guarantee code renders the same in any environment.
 - When grouping selectors, keep individual selectors to a single line.
 - Include one space before the opening brace of declaration blocks for legibility.
@@ -152,14 +152,14 @@ GSS follows [mdo's Code Guide](http://codeguide.co/) for seamless HTML/CSS codin
 
 _(From [Code Guide](http://codeguide.co/).)_
 
-#### Order of styles inside a module
+### Order of styles inside a module
 1. Variables
 2. Mixins
 3. Basic HTML element — `input[type="password"] {}`
 4. Module class — `.input {}`
 5. Module attribute class — `.input.is-large {}`
 
-#### Order of properties inside a style
+### Order of properties inside a style
 1. Positioning — `position`,  `left`, …
 2. Box model — `display`,  `float`,  `width`,  `padding`,  `margin` …
 3. Typographic — `font`,  `text-align`, …
@@ -168,19 +168,19 @@ _(From [Code Guide](http://codeguide.co/).)_
 
 _(From [Code Guide](http://codeguide.co/).)_
 
-#### Single declarations
+### Single declarations
 In instances where a rule set includes _only one declaration_, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines. _(From [Code Guide](http://codeguide.co/).)_
 
-#### Comments
+### Comments
 Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name. Be sure to write in complete sentences for larger comments and succinct phrases for general notes. _(From [Code Guide](http://codeguide.co/).)_
 
-#### Linter
+### Linter
 Use [SCSS Lint](https://github.com/brigade/scss-lint) to help you be on the right track. Install its [plugin](https://github.com/brigade/scss-lint#editor-integration) on your editor of choice. Also, use [this GSS configuration file](https://gist.github.com/sergiofontes/47ec6addc1768855b3e7b2aba992f96f) to remain compliant with these standards.
 
-#### Autoprefixer
+### Autoprefixer
 Use [Autoprefixer](https://github.com/postcss/autoprefixer) to deal with CSS vendor prefixes. In other words, you must not manually write these annoying prefixes — let the PostCSS' [Autoprefixer](https://github.com/postcss/autoprefixer) do it for you. Doing this, you keep the code clean and also improve maintainability, since you can easily configure what browsers the project should support.
 
-#### Git
+### Git
 Keep an eye on Guava's [Git standards](https://github.com/guava/standards/blob/master/git.md) and on the following naming convention for branches.
 * Use hyphen to separate words (eg.: `name-of-branch`).
 * Use slash to separate branch prefix from branch name (eg.: `prefix/name-of-branch`).
