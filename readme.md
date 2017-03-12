@@ -98,8 +98,6 @@ _Module (Cards)_
 }
 ```
 
----
-
 #### Example of Dropdown
 ```html
 <div class="dropdown is-centered has-icons">
@@ -147,8 +145,6 @@ _Module (Icons)_
   &.of-logout {…}
 }
 ```
-
----
 
 #### Menu
 ```html
@@ -199,8 +195,6 @@ _Module (Logos)_
   &.is-small {…}
 }
 ```
-
----
 
 #### Grid
 ```html
