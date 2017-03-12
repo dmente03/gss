@@ -12,7 +12,7 @@ It's heavily inspired by a lot of great ideas, like [Atomic Design](http://atomi
 - Seamless maintainability of code.
 - Structure that leverages the power of cascading stylesheet.
 
-[Intro]
+_TODO: Visual introduction_
 
 ## How it works
 
@@ -24,7 +24,7 @@ The stylesheets are categorized in three types:
 
 Every stylesheet category, from Base to Page, contains **Attribute** classes that defines UI characteristics — which is named in a more natural and contextual way (`p.is-lead {…}`, `.icon.of-search {…}`).
 
-[Examples]
+_TODO: Visual examples_
 
 ## Going deeper
 
@@ -36,6 +36,7 @@ Defaults and styles of base HTML and UI elements. They are the most basic styles
 - Typography
 - Utils
 
+#### Post
 ```html
 <article class="article is-post">
   <h1>…</h1>
@@ -66,6 +67,7 @@ blockquote {
 ### Modules
 Independent, reusable and functional UI components that composes the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only name the parent.
 
+#### Example of Card
 ```html
 <article class="card is-employee">
   <header>
@@ -98,6 +100,7 @@ _Module (Cards)_
 
 ---
 
+#### Example of Dropdown
 ```html
 <div class="dropdown is-centered has-icons">
   <ul>
@@ -147,6 +150,7 @@ _Module (Icons)_
 
 ---
 
+#### Menu
 ```html
 <nav class="menu is-top-nav is-fixed">
   <img class="logo of-guava is-small" src="" alt="Guava logo">
@@ -198,6 +202,7 @@ _Module (Logos)_
 
 ---
 
+#### Grid
 ```html
 <div class="grid is-container">
   <div class="grid is-row">
@@ -233,6 +238,7 @@ _Module (Grid)_
 ### Attributes
 UI characteristics classes. They are prefixed by a verb/preposition; and can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
 
+#### Example of Login Card
 ```html
 <article class="card of-login">
   <h3>Login</h3>
@@ -294,6 +300,7 @@ Class | Category
 ### Pages
 Context and page-specific styles that can’t be reused or alocated within a Module. These styles classes must be prefixed with `.page-`.
 
+#### Example of Color Theme
 ```html
 <body class="page-color">
   <article class="article is-post">
