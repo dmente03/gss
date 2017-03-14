@@ -16,25 +16,20 @@ _TODO: Visual introduction_
 
 ## How it works
 
-The stylesheets are categorized in three types:
+Every UI component has its own characteristics. These qualities can simply be set in its own element (`p {…}`, for example), or can be extended by the use of classes (`p.is-lead {…}`). On this last case, `.is-lead` is know as **Attribute**. These classes defines and categorizes the components. Since they are prefixed of a verb/preposition, they are named in a more natural and contextual way.
+
+In GSS, the stylesheets are categorized into three types, which can (or not) contain Attributes:
 
 1. **Base** — defaults and styles of base HTML and UI elements (`p {…}`).
 2. **Modules** — independent, reusable and functional UI components. (`.card {…}`).
 3. **Page** — context and page-specific styles (`.page-login {…}`).
-
-Every stylesheet category, from Base to Page, contains **Attribute** classes that defines UI characteristics — which is named in a more natural and contextual way (`p.is-lead {…}`, `.icon.of-search {…}`).
 
 _TODO: Visual examples_
 
 ## Going deeper
 
 ### Base
-Defaults and styles of base HTML and UI elements. They are the most basic styles of every project and are categorized in:
-- Colors
-- Forms
-- Tables
-- Typography
-- Utils
+Defaults and styles of base HTML and UI elements. They are the most basic styles of every project. Also, its rules are applied using an element selector.
 
 #### Post
 ```html
@@ -65,7 +60,7 @@ blockquote {
 ```
 
 ### Modules
-Independent, reusable and functional UI components that composes the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only name the parent.
+Independent, reusable and functional UI components that forms the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only need to put classes on the parent.
 
 #### Example of Card
 ```html
@@ -104,19 +99,19 @@ _Module (Cards)_
   <ul>
     <li>
       <a href="#">
-        <span class="icon of-profile" role="presentation"></span>
+        <span class="icon of-profile"></span>
         Profile
       </a>
     </li>
     <li>
       <a href="#">
-        <span class="icon of-configuration" role="presentation"></span>
+        <span class="icon of-configuration"></span>
         Configuration
       </a>
     </li>
     <li>
       <a href="#">
-        <span class="icon of-logout" role="presentation"></span>
+        <span class="icon of-logout"></span>
         Log out
       </a>
     </li>
@@ -148,8 +143,8 @@ _Module (Icons)_
 
 #### Menu
 ```html
-<nav class="menu is-top-nav is-fixed">
-  <img class="logo of-guava is-small" src="" alt="Guava logo">
+<nav class="menu is-side-nav is-fixed">
+  <img class="logo of-guava is-small" src="…">
   <ul>
     <li class="is-active">
       <a href="#">
@@ -178,7 +173,7 @@ input[type="search"] {…}
 
 _Module (Menus)_
 ```css
-.menu.is-top-nav {
+.menu.is-side-nav {
   …
   ul {…}
   li {…}
@@ -229,6 +224,39 @@ _Module (Grid)_
 }
 ```
 
+### Pages
+Context and page-specific styles that can’t be reused or alocated within a Module. These styles classes must be prefixed with `.page-`.
+
+#### Example of Color Theme
+```html
+<body class="page-color">
+  <article class="article is-post">
+    <h1>…</h1>
+    <p class="is-lead">…</p>
+    <p>…</p>
+    <blockquote>
+      …
+      <cite>…</cite>
+    </blockquote>
+  </article>
+</body>
+```
+
+Page (Color)
+```css
+.page-color {
+  …
+  .article.is-post {
+    h1 {…}
+    p {…}
+    blockquote {
+      …
+      cite {…}
+    }
+  }
+}
+```
+
 ### Attributes
 UI characteristics classes. They are prefixed by a verb/preposition; and can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
 
@@ -240,7 +268,7 @@ UI characteristics classes. They are prefixed by a verb/preposition; and can be 
   <input class="is-large" type="password" placeholder="And your password">
   <button class="of-submit has-icon">
     Log me in
-    <span class="icon of-submit / motion is-submiting" role="presentation"></span>
+    <span class="icon of-submit / motion is-submiting"></span>
   </button>
 </article>
 ```
@@ -290,39 +318,6 @@ Class | Category
 `.has-icon` | _Dependence_
 `.is-submiting` | _Behavior_
 `.at-login` | _Context_
-
-### Pages
-Context and page-specific styles that can’t be reused or alocated within a Module. These styles classes must be prefixed with `.page-`.
-
-#### Example of Color Theme
-```html
-<body class="page-color">
-  <article class="article is-post">
-    <h1>…</h1>
-    <p class="is-lead">…</p>
-    <p>…</p>
-    <blockquote>
-      …
-      <cite>…</cite>
-    </blockquote>
-  </article>
-</body>
-```
-
-Page (Color)
-```css
-.page-color {
-  …
-  .article.is-post {
-    h1 {…}
-    p {…}
-    blockquote {
-      …
-      cite {…}
-    }
-  }
-}
-```
 
 ### Naming principles
 - Use of `lisp-case` for naming classes. All lowercase.
