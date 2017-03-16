@@ -135,15 +135,14 @@ _Module (Dropdowns)_
   ul {…}
   li {…}
   a {…}
-  &.has-icon {
-    .icon {…}
-  }
+  &.has-icons .icon {…}
 }
 ```
 
 _Module (Icons)_
 ```css
 .icon {
+  …
   &.of-profile {…}
   &.of-configuration {…}
   &.of-logout {…}
@@ -152,8 +151,8 @@ _Module (Icons)_
 
 #### Menu
 ```html
-<nav class="menu is-side-nav is-fixed">
-  <img class="logo of-guava is-small" src="…">
+<nav class="menu by-side has-icon">
+  <img class="logo is-small" src="…">
   <ul>
     <li class="is-active">
       <a href="#">
@@ -186,7 +185,7 @@ input[type="search"] {…}
 
 _Module (Logos)_
 ```css
-.logo.of-guava {
+.logo {
   …
   &.is-small {…}
 }
@@ -195,6 +194,7 @@ _Module (Logos)_
 _Module (Icons)_
 ```css
 .icon {
+  …
   &.of-dashboard {…}
   &.of-people {…}
   &.of-projects {…}
@@ -203,48 +203,15 @@ _Module (Icons)_
 
 _Module (Menus)_
 ```css
-.menu.is-side-nav {
+.menu.by-side {
   …
   ul {…}
   li {…}
   a {…}
   input[type="search"] {…}
-  .icon {…}
+  .logo {…}
   .is-active a {…}
-  .logo.of-guava {…}
-}
-```
-
-#### Grid
-```html
-<div class="grid is-container">
-  <div class="grid is-row">
-    <div class="grid is-column of-quarter">…</div>
-    <div class="grid is-column of-quarter">…</div>
-    <div class="grid is-column of-quarter">…</div>
-    <div class="grid is-column of-quarter">…</div>
-  </div>
-  <div class="grid is-row">
-    <div class="grid is-column of-third">…</div>
-    <div class="grid is-column of-third">…</div>
-    <div class="grid is-column of-third">…</div>
-  </div>
-  <div class="grid is-row">
-    <div class="grid is-column of-half">…</div>
-    <div class="grid is-column of-half">…</div>
-  </div>
-</div>
-```
-
-_Module (Grid)_
-```css
-.grid.is-container {…}
-.grid.is-row {…}
-.grid.is-column {
-  …
-  &.of-half {…}
-  &.of-third {…}
-  &.of-quarter {…}
+  .has-icon .icon {…}
 }
 ```
 
