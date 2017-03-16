@@ -16,13 +16,13 @@ _TODO: Visual introduction_
 
 ## How it works
 
-Every UI component has its own characteristics. These qualities can simply be set in its own element (`p {…}`, for example), or can be extended by the use of classes (`p.is-lead {…}`). On this last case, `.is-lead` is know as **Attribute**. These classes defines and categorizes the components. Since they are prefixed of a verb/preposition, they are named in a more natural and contextual way.
+Every UI component has its own characteristics. These qualities can simply be set in its own element (`p {…}`, for example), or can be extended by the use of classes (`p.is-lead {…}`). These extension classes are **Attributes** (`.is-lead`). Attributes defines and categorizes the components. Since they are prefixed by a verb/preposition, they are named in a more natural and contextual way.
 
 In GSS, the stylesheets are categorized into three types, which can (or not) contain Attributes:
 
 1. **Base** — defaults and styles of base HTML and UI elements (`p {…}`).
-2. **Modules** — independent, reusable and functional UI components. (`.card {…}`).
-3. **Page** — context and page-specific styles (`.page-login {…}`).
+2. **Modules** — (almost) independent, reusable and functional UI components. (`.card {…}`).
+3. **Page** — contextual and page-specific styles (`.page-login {…}`).
 
 _TODO: Visual examples_
 
@@ -34,12 +34,20 @@ Defaults and styles of base HTML and UI elements. They are the most basic styles
 #### Post
 ```html
 <article class="article is-post">
-  <h1>…</h1>
-  <p class="is-lead">…</p>
-  <p>…</p>
+  <h1>What is love?</h1>
+  <p class="is-lead">Baby don't hurt me</p>
+  <p>What is love?<br>
+     What is love?<br>
+     What is love?<br>
+     Baby don't hurt me<br>
+     Don't hurt me<br>
+     No more<br>
+     Don't hurt me<br>
+     Don't hurt me</p>
   <blockquote>
-    …
-    <cite>…</cite>
+    What is love?<br>
+    What is love?
+    <cite>— Haddaway</cite>
   </blockquote>
 </article>
 ```
@@ -87,9 +95,10 @@ _Module (Cards)_
 ```css
 .card.is-employee {
   …
-  > header {…}
-  > section {…}
+  header {…}
+  section {…}
   img {…}
+  small {…}
 }
 ```
 
@@ -148,27 +157,48 @@ _Module (Icons)_
   <ul>
     <li class="is-active">
       <a href="#">
+        <span class="icon of-dashboard"></span>
         Dashboard
       </a>
     </li>
     <li>
       <a href="#">
+        <span class="icon of-people"></span>
         People
       </a>
     </li>
     <li>
       <a href="#">
+        <span class="icon of-project"></span>
         Project
       </a>
     </li>
   </ul>
   <input type="search" placeholder="Search for something...">
+  <span class="icon of-search"></span>
 </nav>
 ```
 
 _Base (Forms)_
 ```css
 input[type="search"] {…}
+```
+
+_Module (Logos)_
+```css
+.logo.of-guava {
+  …
+  &.is-small {…}
+}
+```
+
+_Module (Icons)_
+```css
+.icon {
+  &.of-dashboard {…}
+  &.of-people {…}
+  &.of-projects {…}
+}
 ```
 
 _Module (Menus)_
@@ -179,15 +209,9 @@ _Module (Menus)_
   li {…}
   a {…}
   input[type="search"] {…}
+  .icon {…}
   .is-active a {…}
   .logo.of-guava {…}
-}
-
-_Module (Logos)_
-```css
-.logo.of-guava {
-  …
-  &.is-small {…}
 }
 ```
 
@@ -231,12 +255,20 @@ Context and page-specific styles that can’t be reused or alocated within a Mod
 ```html
 <body class="page-color">
   <article class="article is-post">
-    <h1>…</h1>
-    <p class="is-lead">…</p>
-    <p>…</p>
+    <h1>What is love?</h1>
+    <p class="is-lead">Baby don't hurt me</p>
+    <p>What is love?<br>
+       What is love?<br>
+       What is love?<br>
+       Baby don't hurt me<br>
+       Don't hurt me<br>
+       No more<br>
+       Don't hurt me<br>
+       Don't hurt me</p>
     <blockquote>
-      …
-      <cite>…</cite>
+      What is love?<br>
+      What is love?
+      <cite>— Haddaway</cite>
     </blockquote>
   </article>
 </body>
