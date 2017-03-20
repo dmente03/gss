@@ -36,7 +36,7 @@ Examples of Attributes classes | Category
 ![Example of a post](https://guava.com.br/images/gss/post.svg)
 
 ### Modules
-![Modules](https://guava.com.br/images/gss/module.svg) Reusable and functional block of UI components that forms the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only need to put classes on the parent. They are prefixed its main class, which is named just like the parent Module (e.g., `.card` for `cards` Module).
+![Modules](https://guava.com.br/images/gss/modules.svg) Reusable and functional block of UI components that forms the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only need to put classes on the parent. They are prefixed its main class, which is named just like the parent Module (e.g., `.card` for `cards` Module).
 
 #### Example of a card
 ![Example of a card](https://guava.com.br/images/gss/card.svg)
@@ -48,7 +48,7 @@ Examples of Attributes classes | Category
 ![Example of a menu](https://guava.com.br/images/gss/menu.svg)
 
 ### Pages
-![Pages](https://guava.com.br/images/gss/page.svg) Context and page-specific styles that can’t be reused or alocated within a Module. These styles classes must be prefixed with `.page-`.
+![Pages](https://guava.com.br/images/gss/pages.svg) Context and page-specific styles that can’t be reused or alocated within a Module. These styles classes must be prefixed with `.page-`.
 
 #### Example of a page theme
 ![Example of a page theme](https://guava.com.br/images/gss/page-theme.svg)
