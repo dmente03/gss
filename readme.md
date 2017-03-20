@@ -1,4 +1,4 @@
-![Logo of Guava Stylesheet Standards](https://dl.dropboxusercontent.com/u/13659411/Guava/gss.svg)
+![Logo of Guava Stylesheet Standards](https://guava.com.br/images/gss/gss.svg)
 
 GSS is a module-based methodology to CSS structuration with a human-friendly syntax. It aims to facilitate the process of understanding, naming and organizing CSS. This way, it’s easier to develop and maintain stylesheets, from small to big projects.
 
@@ -12,310 +12,50 @@ It's heavily inspired by a lot of great ideas, like [Atomic Design](http://atomi
 - Seamless maintainability of code.
 - Structure that leverages the power of cascading stylesheet.
 
-_TODO: Visual introduction_
-
 ## How it works
+### Attribute classes
+Every UI component has its own characteristics. These qualities can simply be set in its own element (`p {…}`, for example), or can be extended by the use of classes (`p.is-lead {…}`). These extension classes are the **Attributes** (`.is-lead`) that defines and categorizes the components. Since they are prefixed by a verb/preposition, they are named in a more natural and contextual way; they can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
 
-Every UI component has its own characteristics. These qualities can simply be set in its own element (`p {…}`, for example), or can be extended by the use of classes (`p.is-lead {…}`). These extension classes are **Attributes** (`.is-lead`). Attributes defines and categorizes the components. Since they are prefixed by a verb/preposition, they are named in a more natural and contextual way.
-
-In GSS, the stylesheets are categorized into three types, which can (or not) contain Attributes:
-
-1. **Base** — defaults and styles of base HTML and UI elements (`p {…}`).
-2. **Modules** — (almost) independent, reusable and functional UI components. (`.card {…}`).
-3. **Page** — contextual and page-specific styles (`.page-login {…}`).
-
-_TODO: Visual examples_
-
-## Going deeper
-
-### Base
-Defaults and styles of base HTML and UI elements. They are the most basic styles of every project. Also, its rules are applied using an element selector.
-
-#### Post
-```html
-<article class="article is-post">
-  <h1>What is love?</h1>
-  <p class="is-lead">Baby don't hurt me</p>
-  <p>What is love?<br>
-     What is love?<br>
-     What is love?<br>
-     Baby don't hurt me<br>
-     Don't hurt me<br>
-     No more<br>
-     Don't hurt me<br>
-     Don't hurt me</p>
-  <blockquote>
-    What is love?<br>
-    What is love?
-    <cite>— Haddaway</cite>
-  </blockquote>
-</article>
-```
-
-_Base (Typography)_
-```css
-h1 {…}
-
-p {
-  …
-  &.is-lead {…}
-}
-
-blockquote {
-  …
-  cite {…}
-}
-```
-
-### Modules
-Independent, reusable and functional UI components that forms the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only need to put classes on the parent.
-
-#### Example of Card
-```html
-<article class="card is-employee">
-  <header>
-    <img src="" alt="Sérgio photo">
-  </header>
-  <section>
-    <h3>Sérgio Fontes</h3>
-    <p>Designer</p>
-    <small>Member since Oct 2013</small>
-  </section>
-</article>
-```
-
-_Base (Typography)_
-```css
-h3 {…}
-p {…}
-small {…}
-```
-
-_Module (Cards)_
-```css
-.card.is-employee {
-  …
-  header {…}
-  section {…}
-  img {…}
-  small {…}
-}
-```
-
-#### Example of Dropdown
-```html
-<div class="dropdown is-centered has-icons">
-  <ul>
-    <li>
-      <a href="#">
-        <span class="icon of-profile"></span>
-        Profile
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="icon of-configuration"></span>
-        Configuration
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="icon of-logout"></span>
-        Log out
-      </a>
-    </li>
-  </ul>
-</div>
-```
-
-_Module (Dropdowns)_
-```css
-.dropdown.is-centered {
-  …
-  ul {…}
-  li {…}
-  a {…}
-  &.has-icons .icon {…}
-}
-```
-
-_Module (Icons)_
-```css
-.icon {
-  …
-  &.of-profile {…}
-  &.of-configuration {…}
-  &.of-logout {…}
-}
-```
-
-#### Menu
-```html
-<nav class="menu by-side has-icon">
-  <img class="logo is-small" src="…">
-  <ul>
-    <li class="is-active">
-      <a href="#">
-        <span class="icon of-dashboard"></span>
-        Dashboard
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="icon of-people"></span>
-        People
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <span class="icon of-project"></span>
-        Project
-      </a>
-    </li>
-  </ul>
-  <input type="search" placeholder="Search for something...">
-  <span class="icon of-search"></span>
-</nav>
-```
-
-_Base (Forms)_
-```css
-input[type="search"] {…}
-```
-
-_Module (Logos)_
-```css
-.logo {
-  …
-  &.is-small {…}
-}
-```
-
-_Module (Icons)_
-```css
-.icon {
-  …
-  &.of-dashboard {…}
-  &.of-people {…}
-  &.of-projects {…}
-}
-```
-
-_Module (Menus)_
-```css
-.menu.by-side {
-  …
-  ul {…}
-  li {…}
-  a {…}
-  input[type="search"] {…}
-  .logo {…}
-  .is-active a {…}
-  .has-icon .icon {…}
-}
-```
-
-### Pages
-Context and page-specific styles that can’t be reused or alocated within a Module. These styles classes must be prefixed with `.page-`.
-
-#### Example of Color Theme
-```html
-<body class="page-color">
-  <article class="article is-post">
-    <h1>What is love?</h1>
-    <p class="is-lead">Baby don't hurt me</p>
-    <p>What is love?<br>
-       What is love?<br>
-       What is love?<br>
-       Baby don't hurt me<br>
-       Don't hurt me<br>
-       No more<br>
-       Don't hurt me<br>
-       Don't hurt me</p>
-    <blockquote>
-      What is love?<br>
-      What is love?
-      <cite>— Haddaway</cite>
-    </blockquote>
-  </article>
-</body>
-```
-
-Page (Color)
-```css
-.page-color {
-  …
-  .article.is-post {
-    h1 {…}
-    p {…}
-    blockquote {
-      …
-      cite {…}
-    }
-  }
-}
-```
-
-### Attributes
-UI characteristics classes. They are prefixed by a verb/preposition; and can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
-
-#### Example of Login Card
-```html
-<article class="card of-login">
-  <h3>Login</h3>
-  <input class="is-large" type="email" placeholder="Type your email">
-  <input class="is-large" type="password" placeholder="And your password">
-  <button class="of-submit has-icon">
-    Log me in
-    <span class="icon of-submit / motion is-submiting"></span>
-  </button>
-</article>
-```
-
-_Base (Forms)_
-```css
-input {
-  …
-  &.is-large {…}
-}
-
-input[type="email"] {…}
-input[type="password"] {…}
-```
-
-Module (Cards)
-```css
-.card.is-login {
-  …
-  > h3 {…}
-  > input {…}
-  button {…}
-}
-```
-
-_Module (Icons)_
-```css
-.icon {
-  …
-  &.of-submit {…}
-}
-```
-
-_Module (Motion)_
-```css
-.motion {
-  …
-  &.is-submiting {…}
-}
-```
-
-Class | Category
------ | --------
+Examples of Attributes classes | Category
+------------------------------ | --------
 `.of-login` | _Relationship_
 `.is-submit` | _Purpose_
 `.is-large` | _Appearance_
 `.has-icon` | _Dependence_
 `.is-submiting` | _Behavior_
+
+### Stylesheet categories
+![GSS categories](https://guava.com.br/images/gss/intro.svg)
+
+## Going deeper into categories
+
+### Base
+![Base](https://guava.com.br/images/gss/base.svg) Defaults and styles of base HTML and UI elements. They are the most basic styles of every project. Its properties are applied using an element selector and/or an Attribute class.
+
+##### Example of a post
+![Example of a post](https://guava.com.br/images/gss/post.svg)
+
+### Modules
+![Modules](https://guava.com.br/images/gss/module.svg) Reusable and functional block of UI components that forms the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only need to put classes on the parent. They are prefixed its main class, which is named just like the parent Module (e.g., `.card` for `cards` Module).
+
+#### Example of a card
+![Example of a card](https://guava.com.br/images/gss/card.svg)
+
+#### Example of a dropdown
+![Example of a dropdown](https://guava.com.br/images/gss/dropdown.svg)
+
+#### Example of a menu
+![Example of a menu](https://guava.com.br/images/gss/menu.svg)
+
+### Pages
+![Pages](https://guava.com.br/images/gss/page.svg) Context and page-specific styles that can’t be reused or alocated within a Module. These styles classes must be prefixed with `.page-`.
+
+#### Example of a page theme
+![Example of a page theme](https://guava.com.br/images/gss/page-theme.svg)
+
+### Attributes
+![Example of a page theme](https://guava.com.br/images/gss/page-theme.svg)
+UI characteristics classes.
 `.at-login` | _Context_
 
 ### Naming principles
@@ -371,11 +111,9 @@ Folder | Description
 `vendors/` | Third-party software
 `vendors/overwrites/` | Third-party overwrites
 
-###  
 
 ---
 
-###  
 
 ## Code style guidelines
 
