@@ -27,53 +27,36 @@ Examples of Attributes classes | Category
 ### Stylesheet categories
 ![GSS categories](https://guava.com.br/images/gss/intro.svg)
 
----
-
-## Going deeper into categories
-
-### Base
+## Base
 ![Base](https://guava.com.br/images/gss/base.svg)
 
 Defaults and styles of base HTML and UI elements. They are the most basic styles of every project. Its properties are applied using an element selector and/or an Attribute class.
 
-##### Example of a post
 ![Example of a post](https://guava.com.br/images/gss/post.svg)
 
----
-
-### Modules
+## Modules
 ![Modules](https://guava.com.br/images/gss/modules.svg)
 
 Reusable and functional block of UI components that forms the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only need to put classes on the parent. They are prefixed its main class, which is named just like the parent Module (e.g., `.card` for `cards` Module).
 
-#### Example of a card
 ![Example of a card](https://guava.com.br/images/gss/card.svg)
 
-#### Example of a dropdown
 ![Example of a dropdown](https://guava.com.br/images/gss/dropdown.svg)
 
-#### Example of a menu
 ![Example of a menu](https://guava.com.br/images/gss/menu.svg)
 
----
-
-### Pages
+## Pages
 ![Pages](https://guava.com.br/images/gss/pages.svg)
 
 Context and page-specific styles that can’t be reused or alocated within a Module. These styles classes must be prefixed with `.page-`.
 
-#### Example of a page theme
 ![Example of a page theme](https://guava.com.br/images/gss/page-theme.svg)
-
----
 
 ## Naming principles
 - Use of `lisp-case` for naming classes. All lowercase.
 - Words separated by a single hyphen (never double).
 - Modules and Attributes are separated with a space in the HTML markup.
 - Different Modules in a same HTML element are separated by a slash (e.g., `<span class="icon of-submit / motion of-submit>`) for visual convenience.
-
----
 
 ## Everything in its right place
 
