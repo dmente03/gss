@@ -14,7 +14,7 @@ It's heavily inspired by a lot of great ideas, like [Atomic Design](http://atomi
 
 ## How it works
 ### Attribute classes
-Every UI component has its own characteristics. These qualities can simply be set in its own element (`p {…}`, for example), or can be extended by the use of classes (`p.is-lead {…}`). These extension classes are the **Attributes** (`.is-lead`) that defines and categorizes the components. Since they are prefixed by a verb/preposition, they are named in a more natural and contextual way; they can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
+Every UI component has its own characteristics — qualities that can simply be set in its own element (`p {…}`, for example), or can be extended by the use of classes (`p.is-lead {…}`). These extension classes are the **Attributes** (`.is-lead`) that defines and categorizes the components. Since they are prefixed by a verb/preposition, they are named in a more natural and contextual way; they can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
 
 Examples of Attributes classes | Category
 ------------------------------ | --------
@@ -25,28 +25,28 @@ Examples of Attributes classes | Category
 `.is-submiting` | _Behavior_
 
 ### Stylesheet categories
-![GSS categories](https://guava.com.br/images/gss/intro.svg)
+![GSS categories. Icon created by Oliviu Stoian from the Noun Project](https://guava.com.br/images/gss/intro.svg)
 
 ## Base
-![Base](https://guava.com.br/images/gss/base-small.svg)
+![Base. Icon created by ProSymbols from the Noun Project](https://guava.com.br/images/gss/base-small.svg)
 
 Defaults and styles of base HTML and UI elements. They are the most basic styles of every project. Its properties are applied using an element selector and/or an Attribute class.
 
 ![Example of a post](https://guava.com.br/images/gss/post.svg)
 
 ## Modules
-![Modules](https://guava.com.br/images/gss/modules-small.svg)
+![Modules. Icon created by Lluisa Iborra from the Noun Project](https://guava.com.br/images/gss/modules-small.svg)
 
 Reusable and functional block of UI components that forms the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only need to put classes on the parent. They are prefixed its main class, which is named just like the parent Module (e.g., `.card` for `cards` Module).
 
-![Example of a card](https://guava.com.br/images/gss/card.svg)
+![Example of a card(https://guava.com.br/images/gss/card.svg)
 
-![Example of a dropdown](https://guava.com.br/images/gss/dropdown.svg)
+![Example of a dropdown. Icons: profile by Ananth; settings by Leonides Delgado; and logout by Andrea Greco; all from the Noun Project]](https://guava.com.br/images/gss/dropdown.svg)
 
-![Example of a menu](https://guava.com.br/images/gss/menu.svg)
+![Example of a menu. Icons: graph by Jian Wei; people by Gregor Cresnar; projects by chinnan; all from the Noun Project](https://guava.com.br/images/gss/menu.svg)
 
 ## Pages
-![Pages](https://guava.com.br/images/gss/pages-small.svg)
+![Pages. Icon created by Melvin Salas from the Noun Project](https://guava.com.br/images/gss/pages-small.svg)
 
 Context and page-specific styles that can’t be reused or alocated within a Module. These styles classes must be prefixed with `.page-`.
 
