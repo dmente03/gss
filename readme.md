@@ -28,14 +28,14 @@ Examples of Attributes classes | Category
 ![GSS categories](https://guava.com.br/images/gss/intro.svg)
 
 ## Base
-![Base](https://guava.com.br/images/gss/base.svg)
+![Base](https://guava.com.br/images/gss/base-small.svg)
 
 Defaults and styles of base HTML and UI elements. They are the most basic styles of every project. Its properties are applied using an element selector and/or an Attribute class.
 
 ![Example of a post](https://guava.com.br/images/gss/post.svg)
 
 ## Modules
-![Modules](https://guava.com.br/images/gss/modules.svg)
+![Modules](https://guava.com.br/images/gss/modules-small.svg)
 
 Reusable and functional block of UI components that forms the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only need to put classes on the parent. They are prefixed its main class, which is named just like the parent Module (e.g., `.card` for `cards` Module).
 
@@ -46,7 +46,7 @@ Reusable and functional block of UI components that forms the bulk of any projec
 ![Example of a menu](https://guava.com.br/images/gss/menu.svg)
 
 ## Pages
-![Pages](https://guava.com.br/images/gss/pages.svg)
+![Pages](https://guava.com.br/images/gss/pages-small.svg)
 
 Context and page-specific styles that can’t be reused or alocated within a Module. These styles classes must be prefixed with `.page-`.
 
