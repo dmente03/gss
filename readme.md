@@ -13,8 +13,10 @@ It's heavily inspired by a lot of great ideas, like [Atomic Design](http://atomi
 - Structure that leverages the power of cascading stylesheet.
 
 ## How it works
+GSS is based on two main ideas: every element can be extended (or shaped) by _Attribute_ classes; the UI is formed by _Modules_, which is a group of HTML elements (and other _Modules_ sometimes).
+
 ### Attribute classes
-Every UI component has its own characteristics — qualities that can simply be set in its own element (`p {…}`, for example), or can be extended by the use of classes (`p.is-lead {…}`). These extension classes are the **Attributes** (`.is-lead`) that defines and categorizes the components. Since they are prefixed by a verb/preposition, they are named in a more natural and contextual way; they can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
+Every UI component has its own characteristics — qualities that can simply be set in its own element (`p {…}`, for example), or can be extended by the use of classes (`p.is-lead {…}`). These extension classes (`.is-lead`) are the _Attributes_ that defines and categorizes the components. Since they are prefixed by a verb/preposition, they are named in a more natural and contextual way; they can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
 
 Examples of Attributes classes | Category
 ------------------------------ | --------
@@ -37,11 +39,11 @@ Defaults and styles of base HTML and UI elements. They are the most basic styles
 ## Modules
 ![Modules. Icon created by Lluisa Iborra from the Noun Project](https://guava.com.br/images/gss/modules-small.svg)
 
-Reusable and functional block of UI components that forms the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only need to put classes on the parent. They are prefixed its main class, which is named just like the parent Module (e.g., `.card` for `cards` Module).
+Reusable and functional block of UI components that forms the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only need to put classes on the parent. They are prefixed its own name as a class, which is named just like the parent Module (e.g., `.card` for `cards` Module).
 
-![Example of a card(https://guava.com.br/images/gss/card.svg)
+![Example of a card](https://guava.com.br/images/gss/card.svg)
 
-![Example of a dropdown. Icons: profile by Ananth; settings by Leonides Delgado; and logout by Andrea Greco; all from the Noun Project]](https://guava.com.br/images/gss/dropdown.svg)
+![Example of a dropdown. Icons: profile by Ananth; settings by Leonides Delgado; and logout by Andrea Greco; all from the Noun Project](https://guava.com.br/images/gss/dropdown.svg)
 
 ![Example of a menu. Icons: graph by Jian Wei; people by Gregor Cresnar; projects by chinnan; all from the Noun Project](https://guava.com.br/images/gss/menu.svg)
 
@@ -55,8 +57,8 @@ Context and page-specific styles that can’t be reused or alocated within a Mod
 ## Naming principles
 - Use of `lisp-case` for naming classes. All lowercase.
 - Words separated by a single hyphen (never double).
-- Modules and Attributes are separated with a space in the HTML markup.
-- Different Modules in a same HTML element are separated by a slash (e.g., `<span class="icon of-submit / motion of-submit>`) for visual convenience.
+- _Modules_ and _Attributes_ are separated with a space in the HTML markup.
+- Different _Modules_ in a same HTML element are separated by a slash (e.g., `<span class="icon of-submit / motion of-submit>`) for visual convenience.
 
 ## Everything in its right place
 
@@ -70,7 +72,7 @@ Base styles | Description
 `base/utils` | Functions, placeholders and uncategorized mixins (for Sass and LESS)
 
 ### Modules files (examples)
-Examples of Modules | Description
+Examples of _Modules_ | Description
 ------------------- | ---------------
 `alerts` | Alerts and notifications
 `articles` | Articles layouts
