@@ -18,8 +18,8 @@ GSS is based on two main ideas: every element can be extended (or shaped) by _At
 ### Attribute classes
 Every UI component has its own characteristics — qualities that can simply be set in its own element (`p {…}`, for example), or can be extended by the use of classes (`p.is-lead {…}`). These extension classes (`.is-lead`) are the _Attributes_ that defines and categorizes the components. Since they are prefixed by a verb/preposition, they are named in a more natural and contextual way; they can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
 
-Examples of Attributes classes | Category
------------------------------- | --------
+Examples of Attributes classes | Type
+------------------------------ | ----
 `.of-login` | _Relationship_
 `.is-submit` | _Purpose_
 `.is-large` | _Appearance_
@@ -151,15 +151,15 @@ _(From [Code Guide](http://codeguide.co/).)_
 In instances where a rule set includes _only one declaration_, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines. _(From [Code Guide](http://codeguide.co/).)_
 ```css
 .icon           { background-position: 0 0; }
-.icon-home      { background-position: 0 -20px; }
-.icon-account   { background-position: 0 -40px; }
+.icon.of-home   { background-position: 0 -20px; }
+.icon.of-work   { background-position: 0 -40px; }
 ```
 
 ### Comments
 Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name. Be sure to write in complete sentences for larger comments and succinct phrases for general notes. _(From [Code Guide](http://codeguide.co/).)_
 ```css
-/* Wrapping element for .modal-title and .modal-close */
-.modal-header {
+/* Wrapping element for .modal.is-title and .modal.is-close */
+.modal.is-header {
   …
 }
 ```
