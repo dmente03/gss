@@ -13,7 +13,7 @@ It's heavily inspired by a lot of great ideas, like [Atomic Design](http://atomi
 - Structure that leverages the power of cascading stylesheet.
 
 ## How it works
-GSS is based on two main ideas:
+GSS is based on three main ideas:
 1. An element can be extended (or shaped) by _Attribute_ classes;
 2. The overall UI is formed by _Modules_, which is a group of HTML elements (and other _Modules_ sometimes);
 3. Every style should be categorized in three ways: Base, Module or Page.
