@@ -13,10 +13,13 @@ It's heavily inspired by a lot of great ideas, like [Atomic Design](http://atomi
 - Structure that leverages the power of cascading stylesheet.
 
 ## How it works
-GSS is based on two main ideas: every element can be extended (or shaped) by _Attribute_ classes; the UI is formed by _Modules_, which is a group of HTML elements (and other _Modules_ sometimes).
+GSS is based on two main ideas:
+1. An element can be extended (or shaped) by _Attribute_ classes;
+2. The overall UI is formed by _Modules_, which is a group of HTML elements (and other _Modules_ sometimes);
+3. Every style should be categorized in three ways: Base, Module or Page.
 
 ### Attribute classes
-Every UI component has its own characteristics — qualities that can simply be set in its own element (`p {…}`, for example), or can be extended by the use of classes (`p.is-lead {…}`). These extension classes (`.is-lead`) are the _Attributes_ that defines and categorizes the components. Since they are prefixed by a verb/preposition, they are named in a more natural and contextual way; they can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
+Every component has its own characteristics — qualities that can simply be set in its own element (`p {…}`, for example), or can be extended by the use of classes (`p.is-lead {…}`). These extension classes (`.is-lead`) are the _Attributes_ that defines and categorizes the components. Since they are prefixed by a verb/preposition, they are named in a more natural and contextual way; they can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
 
 Examples of Attributes classes | Type
 ------------------------------ | ----
