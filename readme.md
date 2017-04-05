@@ -13,13 +13,18 @@ It's heavily inspired by a lot of great ideas, like [Atomic Design](http://atomi
 - Structure that leverages the power of cascading stylesheet.
 
 ## How it works
-GSS is based on three main ideas:
-1. An element can be extended (or shaped) by _Attribute_ classes;
-2. The overall UI is formed by _Modules_, which is a group of HTML elements (and other _Modules_ sometimes);
-3. Every style should be categorized in three ways: Base, Module or Page.
+GSS is based on four main ideas:
+1. An element is shaped by _Attribute_ classes;
+2. _Base_ HTML elements and styles comes first.
+3. The overall UI is formed by _Modules_ — reusable and functional block of UI components.
+4. Specific and non-reusable styles are categorized as _Pages_.
 
-### Attribute classes
-Every component has its own characteristics — qualities that can simply be set in its own element (`p {…}`, for example), or can be extended by the use of classes (`p.is-lead {…}`). These extension classes (`.is-lead`) are the _Attributes_ that defines and categorizes the components. Since they are prefixed by a verb/preposition, they are named in a more natural and contextual way; they can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
+### Stylesheet organization
+![GSS categories. Icon created by Oliviu Stoian from the Noun Project](https://guava.com.br/images/gss/intro.svg)
+
+## Attributes
+The core idea of GSS is the use of _Attribute_ classes. They define and categorize the components — be it an simple HTML element, a Module or even a Page. For example, you can set default styles for a `p` element, and then creates a variation of it, like `p.is-lead`
+_Attributes_ prefixed by a verb/preposition, which leads to a more natural and contextual naming scheme; they can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
 
 Examples of Attributes classes | Type
 ------------------------------ | ----
@@ -29,13 +34,15 @@ Examples of Attributes classes | Type
 `.has-icon` | _Dependence_
 `.is-submiting` | _Behavior_
 
-### Stylesheet categories
-![GSS categories. Icon created by Oliviu Stoian from the Noun Project](https://guava.com.br/images/gss/intro.svg)
-
 ## Base
 ![Base. Icon created by ProSymbols from the Noun Project](https://guava.com.br/images/gss/base-small.svg)
 
-Defaults and styles of base HTML and UI elements. They are the most basic styles of every project. Its properties are applied using an element selector and/or an Attribute class.
+Defaults and styles of HTML and UI elements goes here. They are the most basic styles of every project. Its properties are applied using an element selector and/or an _Attribute_ class. _Base_ styles are categorized by:
+
+* Colors: variables sorted by name and semantic purpose.
+* Forms: inputs, fieldsets, buttons, etc.
+* Tables: tables, cells, its rows and columns.
+* Typography: headers, paragraphs, links, lists, labels, etc.
 
 ![Example of a post](https://guava.com.br/images/gss/post.svg)
 
