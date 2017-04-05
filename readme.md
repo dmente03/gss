@@ -22,7 +22,9 @@ GSS is based on four main ideas:
 ### Stylesheet organization
 ![GSS categories. Icon created by Oliviu Stoian from the Noun Project](https://guava.com.br/images/gss/intro.svg)
 
-## Attributes
+## How it is organized
+
+### Attributes
 The core idea of GSS is the use of _Attribute_ classes. They define and categorize the components — be it an simple HTML element, a Module or even a Page. For example, you can set default styles for a `p` element, and then creates a variation of it, like `p.is-lead`
 _Attributes_ prefixed by a verb/preposition, which leads to a more natural and contextual naming scheme; they can be named in a wide variety of ways: purpose, appearance, behavior, dependence, relationship, context and so on.
 
@@ -34,7 +36,7 @@ Examples of Attributes classes | Type
 `.has-icon` | _Dependence_
 `.is-submiting` | _Behavior_
 
-## Base
+### Base
 ![Base. Icon created by ProSymbols from the Noun Project](https://guava.com.br/images/gss/base-small.svg)
 
 Defaults and styles of HTML and UI elements goes here. They are the most basic styles of every project. Its properties are applied using an element selector and/or an _Attribute_ class. _Base_ styles are categorized by:
@@ -46,7 +48,7 @@ Defaults and styles of HTML and UI elements goes here. They are the most basic s
 
 ![Example of a post](https://guava.com.br/images/gss/post.svg)
 
-## Modules
+### Modules
 ![Modules. Icon created by Lluisa Iborra from the Noun Project](https://guava.com.br/images/gss/modules-small.svg)
 
 Reusable and functional block of UI components that forms the bulk of any project. Sometimes, a Module can sit within other Module, but oftentimes they are a group of Base elements in which you only need to put classes on the parent. They are prefixed its own name as a class, which is named just like the parent Module (e.g., `.card` for `cards` Module).
@@ -57,14 +59,14 @@ Reusable and functional block of UI components that forms the bulk of any projec
 
 ![Example of a menu. Icons: graph by Jian Wei; people by Gregor Cresnar; projects by chinnan; all from the Noun Project](https://guava.com.br/images/gss/menu.svg)
 
-## Pages
+### Pages
 ![Pages. Icon created by Melvin Salas from the Noun Project](https://guava.com.br/images/gss/pages-small.svg)
 
 Context and page-specific styles that can’t be reused or alocated within a Module. These styles classes must be prefixed with `.page-`.
 
 ![Example of a page theme](https://guava.com.br/images/gss/page-theme.svg)
 
-## Naming principles
+### Naming principles
 - Use of `lisp-case` for naming classes. All lowercase.
 - Words separated by a single hyphen (never double).
 - _Modules_ and _Attributes_ are separated with a space in the HTML markup.
